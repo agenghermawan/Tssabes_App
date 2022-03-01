@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\User\FrontendController;
 use App\Http\Controllers\User\HomeController as UserHomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,8 +17,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 // User
-Route::get('/', UserHomeController::class);
-
-
+Route::get('/', [FrontendController::class, 'home'])->name('Home');
+Route::get('/profile',[FrontendController::class, 'profile'])->name('Profile');
+Route::get('/tentang-kami',[FrontendController::class, 'tentangKami'])->name('TentangKami');
 
 // Admin
