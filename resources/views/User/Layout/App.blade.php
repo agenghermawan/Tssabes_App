@@ -18,7 +18,7 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap"
         rel="stylesheet">
     <script src="https://kit.fontawesome.com/c0a3e80385.js" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -26,12 +26,11 @@
 
     </style>
     @yield('opsionalCss')
-    @yield('opsionalJs')
 </head>
 
 <body>
 
-    <div class="">
+    <div>
         @include('User.Component.Navbar')
         @yield('content')
         @include('User.Component.Footer')
@@ -39,7 +38,7 @@
 
 
     <!-- Optional JavaScript; choose one of the two! -->
-
+    @yield('opsionalJs')
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
