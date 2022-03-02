@@ -17,6 +17,19 @@ class FrontendController extends Controller
     }
     public function tentangKami()
     {
-        return view('User.TentangKami');
+        return view('User.AboutMe');
     }
+    public function rules()
+    {
+        return view('User.Rules');
+    }
+    public function register()
+    {
+        return view('User.Register');
+    }
+    public function prestasi()
+    {
+        return view('User.Achievement');
+    }
+
 }

@@ -18,6 +18,7 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap"
         rel="stylesheet">
     <script src="https://kit.fontawesome.com/c0a3e80385.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -25,6 +26,7 @@
 
     </style>
     @yield('opsionalCss')
+    @yield('opsionalJs')
 </head>
 
 <body>

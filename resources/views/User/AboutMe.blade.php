@@ -4,8 +4,9 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-6 mt-5">
+                <h3 class="text-center fw-bold mb-3"> Tentang Kami </h3>
                 <p style="text-align: justify">
-                    Tapak Suci Putera Muhammadiyah berdiri pada 31 Juli 1963 di desa Kauman, Yogyakarta dan merupakan
+                    Tapak Suci <strong>Putera Muhammadiyah </strong>  berdiri pada 31 Juli 1963 di desa Kauman, Yogyakarta dan merupakan
                     organisasi otonom ke-11 dari Organisasi Muhammadiyah. Tapak Suci termasuk dalam 10 Perguruan Historis
                     IPSI, yaitu perguruan yang menunjang tumbuh dan berkembangnya IPSI sebagai organisasi. Tapak Suci
                     berasas Islam, bersumber pada Al Qur'an dan As-Sunnah, dan berjiwa persaudaraan. Tapak Suci Cabang Sawah

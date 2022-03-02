@@ -19,6 +19,10 @@ use Illuminate\Support\Facades\Route;
 // User
 Route::get('/', [FrontendController::class, 'home'])->name('Home');
 Route::get('/profile',[FrontendController::class, 'profile'])->name('Profile');
-Route::get('/tentang-kami',[FrontendController::class, 'tentangKami'])->name('TentangKami');
+Route::get('/tentang-kami',[FrontendController::class, 'tentangKami'])->name('AboutMe');
+Route::get('/tata-tertib',[FrontendController::class, 'rules'])->name('Rules');
+
+Route::get('/prestasi',[FrontendController::class, 'prestasi'])->name('Prestasi');
+Route::get('/daftar',[FrontendController::class,'register'])->name('Register');
 
 // Admin
