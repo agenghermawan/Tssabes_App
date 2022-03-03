@@ -17,14 +17,14 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="email"> Nama Lengkap :</label>
-                                    <input type="text" class="form-control shadow-sm rounded-xl">
+                                    <input type="text" class="form-control shadow-sm rounded-xl" name="namaLengkap">
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="email"> Email :</label>
-                                    <input type="text" class="form-control shadow-sm rounded-xl">
+                                    <input type="text" class="form-control shadow-sm rounded-xl" name="email">
                                 </div>
                             </div>
                         </div>
@@ -32,14 +32,14 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="email"> Tempat Lahir :</label>
-                                    <input type="text" class="form-control shadow-sm rounded-xl">
+                                    <input type="text" class="form-control shadow-sm rounded-xl" name="tempatLahir">
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="email"> Tanggal Lahir :</label>
-                                    <input type="text" class="form-control shadow-sm rounded-xl">
+                                    <input type="text" class="form-control shadow-sm rounded-xl" name="tanggalLahir">
                                 </div>
                             </div>
                         </div>
@@ -47,14 +47,14 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="email"> Jenis Kelamin :</label>
-                                    <input type="text" class="form-control shadow-sm rounded-xl">
+                                    <input type="text" class="form-control shadow-sm rounded-xl" name="jenisKelamin">
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="email"> Usia :</label>
-                                    <input type="text" class="form-control shadow-sm rounded-xl">
+                                    <input type="text" class="form-control shadow-sm rounded-xl" name="usia">
                                 </div>
                             </div>
                         </div>
@@ -62,14 +62,14 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="email"> Tinggi Badan :</label>
-                                    <input type="text" class="form-control shadow-sm rounded-xl">
+                                    <input type="text" class="form-control shadow-sm rounded-xl" name="tinggiBadan">
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="email"> Berat Badan :</label>
-                                    <input type="text" class="form-control shadow-sm rounded-xl">
+                                    <input type="text" class="form-control shadow-sm rounded-xl" name="beratBadan">
                                 </div>
                             </div>
                         </div>
@@ -77,14 +77,14 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="email"> Agama :</label>
-                                    <input type="text" class="form-control shadow-sm rounded-xl">
+                                    <input type="text" class="form-control shadow-sm rounded-xl" name="agama">
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="email"> Asal Sekolah :</label>
-                                    <input type="text" class="form-control shadow-sm rounded-xl">
+                                    <input type="text" class="form-control shadow-sm rounded-xl" name="asalSekolah">
                                 </div>
                             </div>
                         </div>
@@ -92,14 +92,14 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="email"> Tingkatan Sekolah (Kelas) :</label>
-                                    <input type="text" class="form-control shadow-sm rounded-xl">
+                                    <input type="text" class="form-control shadow-sm rounded-xl" name="tingkatanSekolah">
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="email"> Unit Latihan :</label>
-                                    <input type="text" class="form-control shadow-sm rounded-xl">
+                                    <input type="text" class="form-control shadow-sm rounded-xl" name="unitLatihan">
                                 </div>
                             </div>
                         </div>
@@ -107,14 +107,14 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="email"> Tingkatan Sabuk (Kelas) :</label>
-                                    <input type="text" class="form-control shadow-sm rounded-xl">
+                                    <input type="text" class="form-control shadow-sm rounded-xl" name="tingkatanSabuk">
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="email"> Riwayat Kesehatan :</label>
-                                    <input type="text" class="form-control shadow-sm rounded-xl">
+                                    <input type="text" class="form-control shadow-sm rounded-xl" name="riwayatKesehatan">
                                 </div>
                             </div>
                         </div>
@@ -122,13 +122,13 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="email"> Alamat :</label>
-                                    <input type="text" class="form-control shadow-sm rounded-xl">
+                                    <input type="text" class="form-control shadow-sm rounded-xl" name="alamat">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="email"> No Telepon :</label>
-                                    <input type="text" class="form-control shadow-sm rounded-xl">
+                                    <input type="text" class="form-control shadow-sm rounded-xl" name="noTelp">
                                 </div>
                             </div>
                         </div>
@@ -140,16 +140,16 @@
                         <div class="col-md-12 my-3">
                             <label for="foto" class="mb-2"> Foto(Background Putih Menggunakan Baju Tapak Suci)
                             </label>
-                            <input type="file" class="form-control">
+                            <input type="file" class="form-control" name="foto">
                         </div>
                         <div class="col-md-12">
                             <label for="foto" class="mb-2"> Akte </label>
-                            <input type="file" class="form-control">
+                            <input type="file" class="form-control" name="akter">
                         </div>
                         <div class="row">
                             <div class="container">
-                                <a type="submit" class="btn btn-info my-2" id="back"> Back </a>
-                                <button type="submit" class="btn btn-info my-2"> Submit Pendaftaran
+                                <a type="submit" class="btn btn-info my-2" id="back"> Kembali </a>
+                                <button type="submit" class="btn btn-info my-2"> Lakukan Pendaftaran
                                 </button>
                             </div>
                         </div>
@@ -172,6 +172,7 @@
                 $("#first-form").fadeIn("slow");
                 $("#second-form").hide("slow");
             });
+           
         });
     </script>
 
