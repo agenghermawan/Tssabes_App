@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RegisterRequest;
+use App\Models\Register;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert as Alert;
 
 class RegisterController extends Controller
 {
@@ -33,9 +36,20 @@ class RegisterController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RegisterRequest $request)
     {
-        dd($request->all());
+        $data = $request->all();
+
+        $data['akte'] = $request->file('akte')->storeAs('image/akte',$request->file('akte')->getClientOriginalName(),'public');
+        $data['foto'] = $request->file('foto')->storeAs('image/foto',$request->file('foto')->getClientOriginalName(),'public');
+        Register::create($data);
+
+        if(Register::where('email',$data['email'])->first()){
+            Alert::success('Success Title', 'Success Message');
+        };
+        return redirect()->route('Register')->with([
+            'message' => 'Berhasil di daftarkan'
+        ]);
     }
 
     /**

@@ -29,7 +29,7 @@
 </head>
 
 <body>
-
+    @include('sweetalert::alert')
     <div>
         @include('User.Component.Navbar')
         @yield('content')

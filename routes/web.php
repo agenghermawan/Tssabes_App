@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\RegisterController;
 use App\Http\Controllers\User\FrontendController;
@@ -27,4 +28,7 @@ Route::get('/prestasi',[FrontendController::class, 'prestasi'])->name('Prestasi'
 Route::get('/daftar',[FrontendController::class,'register'])->name('Register');
 
 Route::resource('/register', RegisterController::class);
+
+
 // Admin
+Route::get('/dashboard',[DashboardController::class,'index'])->name('Dashboard');
