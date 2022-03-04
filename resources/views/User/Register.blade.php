@@ -22,6 +22,7 @@
                         disini </a> </p>
                 <form action="{{ route('register.store')}}" method="post" enctype="multipart/form-data">
                     @csrf
+                    <input type="hidden" name="status" value="PendaftaranUlang">
                     <div class="first-form" id="first-form">
                         <div class="row mb-3">
                             <div class="col-md-6">
@@ -152,7 +153,7 @@
                                     <input type="text" class="form-control shadow-sm rounded-xl" name="unitLatihan" value="{{ old('unitLatihan')}}">
                                 @error('unitLatihan')
                                     <div class="text-danger">{{$message}}</div>
-                                @enderror 
+                                @enderror
                                 </div>
                             </div>
                         </div>
@@ -199,7 +200,6 @@
                         </div>
                         <a class="btn btn-info" id="hide"> Selanjutnya </a>
                     </div>
-
 
                     <div class="row my-3" id="second-form" style="display: none">
                         <div class="col-md-12 my-3">
@@ -263,7 +263,7 @@
                 $("#first-form").fadeIn("slow");
                 $("#second-form").hide("slow");
             });
-           
+
         });
     </script>
 

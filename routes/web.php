@@ -32,3 +32,5 @@ Route::resource('/register', RegisterController::class);
 
 // Admin
 Route::get('/dashboard',[DashboardController::class,'index'])->name('Dashboard');
+Route::get('/pendaftaran-baru',[\App\Http\Controllers\Admin\PendaftaranController::class , 'pendaftaranBaru'])->name('pendaftarn-baru');
+Route::get('/pendaftaran-ulang',[\App\Http\Controllers\Admin\PendaftaranController::class , 'pendaftaranUlang'])->name('pendaftarn-ulang');

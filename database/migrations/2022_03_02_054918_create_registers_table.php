@@ -33,6 +33,7 @@ class CreateRegistersTable extends Migration
             $table->string('noTelp');
             $table->string('foto');
             $table->string('akte');
+            $table->string('status');
             $table->timestamps();
         });
     }
