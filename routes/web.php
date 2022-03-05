@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\PrestasiController;
 use App\Http\Controllers\Admin\RegisterController;
 use App\Http\Controllers\User\FrontendController;
 use App\Http\Controllers\User\HomeController as UserHomeController;
@@ -34,3 +35,7 @@ Route::resource('/register', RegisterController::class);
 Route::get('/dashboard',[DashboardController::class,'index'])->name('Dashboard');
 Route::get('/pendaftaran-baru',[\App\Http\Controllers\Admin\PendaftaranController::class , 'pendaftaranBaru'])->name('pendaftarn-baru');
 Route::get('/pendaftaran-ulang',[\App\Http\Controllers\Admin\PendaftaranController::class , 'pendaftaranUlang'])->name('pendaftarn-ulang');
+
+// Prestasi
+
+Route::resource('/prestasi', PrestasiController::class);

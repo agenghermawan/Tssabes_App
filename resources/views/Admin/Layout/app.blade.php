@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/vendors/perfect-scrollbar/perfect-scrollbar.css') }}">
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.svg') }}" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -51,10 +53,10 @@
                             </a>
                             <ul class="submenu ">
                                 <li class="submenu-item ">
-                                    <a href="{{route('pendaftarn-baru')}}">Pendaftaran Baru </a>
+                                    <a href="{{ route('pendaftarn-baru') }}">Pendaftaran Baru </a>
                                 </li>
                                 <li class="submenu-item ">
-                                    <a href="{{route('pendaftarn-ulang')}}">Pendaftaran Ulang </a>
+                                    <a href="{{ route('pendaftarn-ulang') }}">Pendaftaran Ulang </a>
                                 </li>
                             </ul>
                         </li>
@@ -66,7 +68,7 @@
                             </a>
                             <ul class="submenu ">
                                 <li class="submenu-item ">
-                                    <a href="extra-component-avatar.html">Tambahkan Prestasi</a>
+                                    <a href="{{ route('prestasi.create') }}">Tambahkan Prestasi</a>
                                 </li>
                                 <li class="submenu-item ">
                                     <a href="extra-component-avatar.html">Prestasi SD</a>
@@ -200,7 +202,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
+                        {{-- <div class="row">
                             <div class="col-12 col-xl-4">
                                 <div class="card">
                                     <div class="card-header">
@@ -211,7 +213,7 @@
                                             <div class="col-6">
                                                 <div class="d-flex align-items-center">
                                                     <svg class="bi text-primary" width="32" height="32" fill="blue"
-                                                         style="width:10px">
+                                                        style="width:10px">
                                                         <use
                                                             xlink:href="assets/vendors/bootstrap-icons/bootstrap-icons.svg#circle-fill" />
                                                     </svg>
@@ -229,7 +231,7 @@
                                             <div class="col-6">
                                                 <div class="d-flex align-items-center">
                                                     <svg class="bi text-success" width="32" height="32" fill="blue"
-                                                         style="width:10px">
+                                                        style="width:10px">
                                                         <use
                                                             xlink:href="assets/vendors/bootstrap-icons/bootstrap-icons.svg#circle-fill" />
                                                     </svg>
@@ -247,7 +249,7 @@
                                             <div class="col-6">
                                                 <div class="d-flex align-items-center">
                                                     <svg class="bi text-danger" width="32" height="32" fill="blue"
-                                                         style="width:10px">
+                                                        style="width:10px">
                                                         <use
                                                             xlink:href="assets/vendors/bootstrap-icons/bootstrap-icons.svg#circle-fill" />
                                                     </svg>
@@ -273,46 +275,48 @@
                                         <div class="table-responsive">
                                             <table class="table table-hover table-lg">
                                                 <thead>
-                                                <tr>
-                                                    <th>Name</th>
-                                                    <th>Comment</th>
-                                                </tr>
+                                                    <tr>
+                                                        <th>Name</th>
+                                                        <th>Comment</th>
+                                                    </tr>
                                                 </thead>
                                                 <tbody>
-                                                <tr>
-                                                    <td class="col-3">
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="avatar avatar-md">
-                                                                <img src="assets/images/faces/5.jpg">
+                                                    <tr>
+                                                        <td class="col-3">
+                                                            <div class="d-flex align-items-center">
+                                                                <div class="avatar avatar-md">
+                                                                    <img src="assets/images/faces/5.jpg">
+                                                                </div>
+                                                                <p class="font-bold ms-3 mb-0">Si Cantik</p>
                                                             </div>
-                                                            <p class="font-bold ms-3 mb-0">Si Cantik</p>
-                                                        </div>
-                                                    </td>
-                                                    <td class="col-auto">
-                                                        <p class=" mb-0">Congratulations on your graduation!</p>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="col-3">
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="avatar avatar-md">
-                                                                <img src="assets/images/faces/2.jpg">
+                                                        </td>
+                                                        <td class="col-auto">
+                                                            <p class=" mb-0">Congratulations on your
+                                                                graduation!</p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="col-3">
+                                                            <div class="d-flex align-items-center">
+                                                                <div class="avatar avatar-md">
+                                                                    <img src="assets/images/faces/2.jpg">
+                                                                </div>
+                                                                <p class="font-bold ms-3 mb-0">Si Ganteng</p>
                                                             </div>
-                                                            <p class="font-bold ms-3 mb-0">Si Ganteng</p>
-                                                        </div>
-                                                    </td>
-                                                    <td class="col-auto">
-                                                        <p class=" mb-0">Wow amazing design! Can you make another tutorial for
-                                                            this design?</p>
-                                                    </td>
-                                                </tr>
+                                                        </td>
+                                                        <td class="col-auto">
+                                                            <p class=" mb-0">Wow amazing design! Can you make
+                                                                another tutorial for
+                                                                this design?</p>
+                                                        </td>
+                                                    </tr>
                                                 </tbody>
                                             </table>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                    </div> --}}
                     </div>
                     <div class="col-12 col-lg-3">
                         <div class="card">
@@ -394,10 +398,15 @@
     <script src="{{ asset('assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
     <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.repeater/1.2.1/jquery.repeater.min.js"
+        integrity="sha512-foIijUdV0fR0Zew7vmw98E6mOWd9gkGWQBWaoA1EOFAx+pY+N8FmmtIYAVj64R98KeD2wzZh1aHK0JSpKmRH8w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <script src="{{ asset('assets/vendors/apexcharts/apexcharts.js') }}"></script>
     <script src="{{ asset('assets/js/pages/dashboard.js') }}"></script>
 
     <script src="{{ asset('assets/js/mazer.js') }}"></script>
+    @yield('opsionalJS')
 </body>
 
 </html>
