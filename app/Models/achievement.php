@@ -8,8 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class achievement extends Model
 {
     use HasFactory;
-    protected $cast = [
+    protected $casts = [
         'daftarJuara' => 'array',
     ];
+
     protected $guarded = [];
 }

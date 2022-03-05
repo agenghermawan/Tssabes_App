@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PrestasiRequest;
+use App\Models\achievement;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class PrestasiController extends Controller
 {
@@ -33,9 +36,11 @@ class PrestasiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PrestasiRequest $request)
     {
-        dd($request);
+        achievement::create($request->all());
+        toast('Berhasil menambahkan prestasi','success');
+        return back();
     }
 
     /**

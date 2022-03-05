@@ -5,7 +5,7 @@
 @endsection
 @section('content')
     <div style="font-family: Nunito">
-        <form action="{{ route('prestasi.create') }}" method="post">
+        <form action="{{ route('prestasi.store') }}" method="post">
             @csrf
             <div class="mb-3">
                 <label for="namaLengkap" class="form-label">Nama Lengkap</label>
