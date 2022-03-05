@@ -18,6 +18,7 @@ class CreateAchievementsTable extends Migration
             $table->string('namaLengkap');
             $table->string('asalSekolah');
             $table->string('tingkatanSekolah');
+            $table->string('status');
             $table->json('dafarJuara');
             $table->timestamps();
         });

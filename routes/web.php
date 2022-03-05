@@ -38,4 +38,4 @@ Route::get('/pendaftaran-ulang',[\App\Http\Controllers\Admin\PendaftaranControll
 
 // Prestasi
 
-Route::resource('/prestasi', PrestasiController::class);
+Route::resource('/admin/prestasi', PrestasiController::class);

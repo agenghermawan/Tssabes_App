@@ -4,7 +4,7 @@
     Tambahkan Prestasi
 @endsection
 @section('content')
-    <div>
+    <div style="font-family: Nunito">
         <form action="{{ route('prestasi.create') }}" method="post">
             @csrf
             <div class="mb-3">
@@ -19,7 +19,13 @@
                 <label for="tingkatanSekolah" class="form-label">Tingkatan Sekolah</label>
                 <input type="text" class="form-control" id="tingkatanSekolah" name="tingkatanSekolah">
             </div>
-
+            <div class="mb-3">
+                <label for="status" class="form-label">Status Prestasi</label>
+                <select name="status" id="" class="form-control">
+                    <option value="Prestasi SD"> Prestasi SD </option>
+                    <option value="Prestasi SD"> Prestasi Remaja </option>
+                </select>
+            </div>
             <div class="mb-3">
                 <label for="daftarJuara"> Daftar Juara</label>
                 <div class="repeater">
@@ -54,4 +60,8 @@
             }
         });
     </script>
+@endsection
+
+@section('optionalCSS')
+
 @endsection
