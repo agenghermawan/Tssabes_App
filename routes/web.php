@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\PrestasiController;
 use App\Http\Controllers\Admin\RegisterController;
@@ -42,3 +43,4 @@ Route::get('/pendaftaran-ulang',[\App\Http\Controllers\Admin\PendaftaranControll
 Route::get('/admin/prestasi-sd',[PrestasiController::class, 'prestasiSD'])->name('prestasi-sd');
 Route::get('/admin/prestasi-remaja',[PrestasiController::class, 'prestasiRemaja'])->name('prestasi-remaja');
 Route::resource('/admin/prestasi', PrestasiController::class);
+Route::resource('/admin/gallery', GalleryController::class);

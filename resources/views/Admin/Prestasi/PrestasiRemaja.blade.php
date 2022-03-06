@@ -1,8 +1,5 @@
-@extends('Admin.Layout.app')
+@extends('Admin.Layout.Main')
 
-@section('title')
-    Prestasi SD
-@endsection
 @section('content')
     <div class="card">
         <div class="card-body">
@@ -21,9 +18,6 @@
                         <tr>
                             <td class="col-auto">
                                 <div class="d-flex align-items-center">
-                                    <div class="avatar avatar-md">
-                                        <img src="assets/images/faces/5.jpg">
-                                    </div>
                                     <p class="font-bold ms-3 mb-0">{{ $ps->namaLengkap }}</p>
                                 </div>
                             </td>
