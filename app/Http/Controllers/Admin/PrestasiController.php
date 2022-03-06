@@ -87,4 +87,16 @@ class PrestasiController extends Controller
     {
         //
     }
+
+    public function prestasiSD()
+    {
+        $prestasiSD = achievement::where('status','Prestasi SD')->get();
+        return view('Admin.Prestasi.PrestasiSD',compact('prestasiSD'));
+    }
+
+    public function prestasiRemaja()
+    {
+        $prestasiRemaja = achievement::where('status','Prestasi Remaja')->get();
+        return view('Admin.Prestasi.PrestasiRemaja',compact('prestasiRemaja'));
+    }
 }

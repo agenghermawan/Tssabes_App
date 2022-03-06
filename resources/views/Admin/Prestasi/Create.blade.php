@@ -23,7 +23,7 @@
                 <label for="status" class="form-label">Status Prestasi</label>
                 <select name="status" id="" class="form-control">
                     <option value="Prestasi SD"> Prestasi SD </option>
-                    <option value="Prestasi SD"> Prestasi Remaja </option>
+                    <option value="Prestasi Remaja"> Prestasi Remaja </option>
                 </select>
             </div>
             <div class="mb-3">

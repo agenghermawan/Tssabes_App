@@ -72,10 +72,10 @@
                                     <a href="{{ route('prestasi.create') }}">Tambahkan Prestasi</a>
                                 </li>
                                 <li class="submenu-item ">
-                                    <a href="extra-component-avatar.html">Prestasi SD</a>
+                                    <a href="{{ route('prestasi-sd')}}">Prestasi SD</a>
                                 </li>
                                 <li class="submenu-item ">
-                                    <a href="extra-component-sweetalert.html">Prestasi Remaja</a>
+                                    <a href="{{ route('prestasi-remaja')}}">Prestasi Remaja</a>
                                 </li>
                             </ul>
                         </li>

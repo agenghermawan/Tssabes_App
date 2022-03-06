@@ -38,4 +38,7 @@ Route::get('/pendaftaran-ulang',[\App\Http\Controllers\Admin\PendaftaranControll
 
 // Prestasi
 
+
+Route::get('/admin/prestasi-sd',[PrestasiController::class, 'prestasiSD'])->name('prestasi-sd');
+Route::get('/admin/prestasi-remaja',[PrestasiController::class, 'prestasiRemaja'])->name('prestasi-remaja');
 Route::resource('/admin/prestasi', PrestasiController::class);
