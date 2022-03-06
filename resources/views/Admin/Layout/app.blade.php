@@ -18,11 +18,14 @@
     <link rel="stylesheet" href="{{ asset('assets/vendors/perfect-scrollbar/perfect-scrollbar.css') }}">
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.svg') }}" type="image/x-icon">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{{ asset('assets/vendors/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/vendors/jquery-datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('assets/vendors/jquery-datatables/custom.jquery.dataTables.bootstrap5.min.js') }}"></script>
     @yield('opsionalCss')
 </head>
 
 <body>
-        @include('sweetalert::alert')
+    @include('sweetalert::alert')
     <div id="app">
         <div id="sidebar" class="active">
             <div class="sidebar-wrapper active">
@@ -72,10 +75,10 @@
                                     <a href="{{ route('prestasi.create') }}">Tambahkan Prestasi</a>
                                 </li>
                                 <li class="submenu-item ">
-                                    <a href="{{ route('prestasi-sd')}}">Prestasi SD</a>
+                                    <a href="{{ route('prestasi-sd') }}">Prestasi SD</a>
                                 </li>
                                 <li class="submenu-item ">
-                                    <a href="{{ route('prestasi-remaja')}}">Prestasi Remaja</a>
+                                    <a href="{{ route('prestasi-remaja') }}">Prestasi Remaja</a>
                                 </li>
                             </ul>
                         </li>
@@ -407,6 +410,14 @@
     <script src="{{ asset('assets/js/pages/dashboard.js') }}"></script>
 
     <script src="{{ asset('assets/js/mazer.js') }}"></script>
+
+    <script src="{{ asset('assets/vendors/simple-datatables/simple-datatables.js') }}"></script>
+    <script>
+        // Simple Datatable
+        let table1 = document.querySelector('#table1');
+        let dataTable = new simpleDatatables.DataTable(table1);
+    </script>
+
     @yield('opsionalJS')
 </body>
 
