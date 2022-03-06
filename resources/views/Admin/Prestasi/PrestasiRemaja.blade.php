@@ -1,5 +1,11 @@
 @extends('Admin.Layout.Main')
-
+@section('title')
+    Prestasi Remaja
+@endsection
+@section('description')
+    Daftar Prestasi Remaja
+@endsection
+@section('breadcumb-title', 'Prestasi')
 @section('content')
     <div class="card">
         <div class="card-body">

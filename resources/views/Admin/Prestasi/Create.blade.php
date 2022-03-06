@@ -1,10 +1,10 @@
-@extends('Admin.Layout.app')
+@extends('Admin.Layout.main')
 
 @section('title')
     Tambahkan Prestasi
 @endsection
 @section('content')
-    <div style="font-family: Nunito">
+    <div style="font-family: Nunito" class="p-3">
         <form action="{{ route('prestasi.store') }}" method="post">
             @csrf
             <div class="mb-3">
@@ -63,5 +63,4 @@
 @endsection
 
 @section('optionalCSS')
-
 @endsection

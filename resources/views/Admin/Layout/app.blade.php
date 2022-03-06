@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-   @include('Admin.Component.Head')
+    @include('Admin.Component.Head')
 </head>
 
 <body>
