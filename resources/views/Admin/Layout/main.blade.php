@@ -6,6 +6,7 @@
 </head>
 
 <body>
+    @include('sweetalert::alert')
     <div id="app">
         @include('Admin.Component.Sidebar')
         <div id="main">
@@ -45,6 +46,7 @@
         </div>
     </div>
     @include('Admin.Component.Script')
+    @yield('opsionalJS')
 </body>
 
 </html>

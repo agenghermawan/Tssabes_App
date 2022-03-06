@@ -17,4 +17,15 @@
 <script src="{{ asset('assets/vendors/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('assets/vendors/jquery-datatables/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('assets/vendors/jquery-datatables/custom.jquery.dataTables.bootstrap5.min.js') }}"></script>
+
 @yield('opsionalCss')
+<style>
+    label{
+        color:#25396f;
+        display:block;
+        font-size:.85rem;
+        font-weight:600;
+        letter-spacing:.5px;
+        transition:all .3s
+    }
+</style>

@@ -61,7 +61,7 @@
                     </a>
                     <ul class="submenu ">
                         <li class="submenu-item ">
-                            <a href="layout-default.html">Tambahkan Galeri</a>
+                            <a href="{{ route('gallery.create') }}">Tambahkan Galeri</a>
                         </li>
                     </ul>
                 </li>

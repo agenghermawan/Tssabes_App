@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\GalleryRequest;
+use App\Models\galery;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class GalleryController extends Controller
 {
@@ -24,7 +27,7 @@ class GalleryController extends Controller
      */
     public function create()
     {
-        //
+        return view('Admin.Gallery.create');
     }
 
     /**
@@ -33,9 +36,13 @@ class GalleryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(GalleryRequest $request)
     {
-        //
+        $data = $request->all();
+        $data['image'] = $request->file('image')->storeAs('image/gallery',$request->file('image')->getClietOriginalName(),'public');
+        galery::create($data);
+        toast('Berhasil menambahkan gallery','success');
+        return back();
     }
 
     /**
