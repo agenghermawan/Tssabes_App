@@ -1,47 +1,91 @@
-@extends('Admin.Layout.app')
-
+@extends('Admin.Layout.Main')
 @section('title')
     Pendaftaran Baru
 @endsection
+@section('description')
+    Daftar Siswa yang mendaftar ( Baru )
+@endsection
+@section('breadcumb-title', 'Pendaftaran')
 @section('content')
-    <div class="table-responsive">
+    <div class="card">
+        <div class="card-body">
+            <table class="table table-striped" id="table1">
+                <thead>
+                    <tr>
+                        <th>Nama Lengkap</th>
+                        <th>Asal Sekolah</th>
+                        <th>Tingkatan Sekolah</th>
+                        <th>Status</th>
+                        <th>Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($dataPendaftar as $dp)
+                        <tr>
+                            <td class="col-auto">
+                                <div class="d-flex align-items-center">
+                                    <div class="avatar avatar-md">
+                                        <img src="assets/images/faces/5.jpg">
+                                    </div>
+                                    <p class="font-bold ms-3 mb-0">{{ $dp->namaLengkap }}</p>
+                                </div>
+                            </td>
+                            <td class="col-auto">
+                                <p class=" mb-0">{{ $dp->email }}</p>
+                            </td>
+                            <td class="col-auto">
+                                <p class=" mb-0">{{ $dp->noTelp }}</p>
+                            </td>
+                            <td class="col-auto">
+                                <p class=" mb-0">Daftar Baru</p>
+                            </td>
+                            <td class="col-auto">
+                                <p class=" mb-0">Edit </p>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {{-- <div class="table-responsive">
         <table class="table table-hover table-lg">
             <thead>
                 <tr>
                     <th>Nama Lengkap</th>
-                    <th>Email </th>
-                    <th>No Telp </th>
+                    <th>Asal Sekolah </th>
+                    <th>Tingkatan Sekolah </th>
                     <th>Status</th>
                     <th>Action </th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($dataPendaftar as $dp)
+                @foreach ($prestasiSD as $ps)
                     <tr>
                         <td class="col-auto">
                             <div class="d-flex align-items-center">
                                 <div class="avatar avatar-md">
                                     <img src="assets/images/faces/5.jpg">
                                 </div>
-                                <p class="font-bold ms-3 mb-0">{{ $dp->namaLengkap }}</p>
+                                <p class="font-bold ms-3 mb-0">{{ $ps->namaLengkap }}</p>
                             </div>
                         </td>
                         <td class="col-auto">
-                            <p class=" mb-0">{{ $dp->email }}</p>
+                            <p class=" mb-0">{{ $ps->asalSekolah }}</p>
                         </td>
                         <td class="col-auto">
-                            <p class=" mb-0">{{ $dp->noTelp }}</p>
+                            <p class=" mb-0">{{ $ps->tingkatanSekolah }}</p>
                         </td>
                         <td class="col-auto">
-                            <p class=" mb-0">Daftar Baru</p>
+                            <p class=" mb-0">{{ $ps->status }}</p>
                         </td>
                         <td class="col-auto">
-                            <p class=" mb-0">Edit </p>
+                            <p class=" mb-0"> <button class="btn btn-info">Detail</button> </p>
                         </td>
                     </tr>
                 @endforeach
 
             </tbody>
         </table>
-    </div>
+    </div> --}}
 @endsection

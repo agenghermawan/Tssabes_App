@@ -10,12 +10,12 @@ class PendaftaranController extends Controller
 {
     public function pendaftaranBaru()
     {
-        $dataPendaftar = Register::all();
+        $dataPendaftar = Register::where('status','Pendaftaran Baru')->get();
         return view('Admin.Pendaftaran.pendaftaranBaru',compact('dataPendaftar'));
     }
     public function pendaftaranUlang()
     {
-        $dataPendaftar = Register::all();
+        $dataPendaftar = Register::where('status','Pendaftaran Ulang')->get();
         return view('Admin.Pendaftaran.PendaftaranUlang',compact('dataPendaftar'));
     }
 }
