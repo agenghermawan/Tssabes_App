@@ -1,9 +1,9 @@
 @extends('Admin.Layout.Main')
 @section('title')
-    Prestasi SD
+    Prestasi SDs
 @endsection
 @section('description')
-    Daftar Prestasi SD
+    Daftar Prestasi SDs
 @endsection
 @section('breadcumb-title', 'Prestasi')
 @section('content')
@@ -37,41 +37,109 @@
                                 <p class=" mb-0">{{ $ps->status }}</p>
                             </td>
                             <td class="col-auto">
-                                <!-- Button trigger for large size modal -->
-                                <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal"
-                                    data-bs-target="#large">
-                                    Large Modal
-                                </button>
-                                <!--large size Modal -->
-                                <div class="modal fade text-left" id="large" tabindex="-1" role="dialog"
-                                    aria-labelledby="myModalLabel17" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xlp"
-                                        role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h4 class="modal-title" id="myModalLabel17">Large Modal</h4>
-                                                <button type="button" class="close" data-bs-dismiss="modal"
-                                                    aria-label="Close">
-                                                    <i data-feather="x"></i>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                I love tart cookie cupcake. I love chupa chups biscuit. I love
-                                                marshmallow apple pie wafer
-                                                liquorice. Marshmallow cotton candy chocolate. Apple pie muffin tart.
-                                                Marshmallow halvah pie
-                                                marzipan lemon drops jujubes. Macaroon sugar plum cake icing toffee.
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-light-secondary"
-                                                    data-bs-dismiss="modal">
-                                                    <i class="bx bx-x d-block d-sm-none"></i>
-                                                    <span class="d-none d-sm-block">Close</span>
-                                                </button>
-                                                <button type="button" class="btn btn-primary ml-1" data-bs-dismiss="modal">
-                                                    <i class="bx bx-check d-block d-sm-none"></i>
-                                                    <span class="d-none d-sm-block">Accept</span>
-                                                </button>
+                                <!--Modal lg size -->
+                                <div class="me-1 mb-1 d-inline-block">
+                                    <!-- Button trigger for large size modal -->
+                                    <button type="button" class="btn btn-outline-info" data-bs-toggle="modal"
+                                        data-bs-target="#large{{ $ps->id }}">
+                                        Detail
+                                    </button>
+                                    <!--large size Modal -->
+                                    <div class="modal fade text-left" id="large{{ $ps->id }}" tabindex="-1"
+                                        role="dialog" aria-labelledby="myModalLabel17" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl"
+                                            role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title" id="myModalLabel17">Detail Prestasi Remaja
+                                                    </h4>
+                                                    <button type="button" class="close" data-bs-dismiss="modal"
+                                                        aria-label="Close">
+                                                        <i data-feather="x"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="col-12 col-md-12">
+                                                        <div class="card">
+                                                            <div class="card-header">
+                                                                <h4 class="card-title">Detail Prestasi Siswa</h4>
+                                                            </div>
+                                                            <div class="card-content">
+                                                                <div class="card-body">
+                                                                    <p class="card-text">Berikut adalah detail dari
+                                                                        prestasi siswa
+                                                                    </p>
+                                                                    <!-- Table with outer spacing -->
+                                                                    @php
+                                                                        $data = App\Models\achievement::where('id', $ps->id)->first();
+                                                                    @endphp
+                                                                    <div class="table-responsive">
+                                                                        <table class="table table-lg">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th>Nama Pendaftar</th>
+                                                                                    <th></th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Nama Lengkap
+                                                                                    </td>
+                                                                                    <td>{{ $data->namaLengkap }}</td>
+
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Asal Sekolah
+                                                                                    </td>
+                                                                                    <td>{{ $data->asalSekolah }}</td>
+
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Tingkatan
+                                                                                        Sekolah
+                                                                                    </td>
+                                                                                    <td>{{ $data->tingkatanSekolah }}</td>
+
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500"> Status
+                                                                                    </td>
+                                                                                    <td>{{ $data->status }}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500"> Daftar Juara
+                                                                                        Siswa
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <ul>
+                                                                                            @foreach ($data->daftarJuara as $item)
+                                                                                                <li>
+                                                                                                    {{ $item['daftarJuara'] }}
+                                                                                                </li>
+                                                                                            @endforeach
+                                                                                        </ul>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-light-secondary"
+                                                        data-bs-dismiss="modal">
+                                                        <i class="bx bx-x d-block d-sm-none"></i>
+                                                        <span class="d-none d-sm-block">Close</span>
+                                                    </button>
+                                                    <button type="button" class="btn btn-primary ml-1"
+                                                        data-bs-dismiss="modal">
+                                                        <i class="bx bx-check d-block d-sm-none"></i>
+                                                        <span class="d-none d-sm-block">Accept</span>
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
