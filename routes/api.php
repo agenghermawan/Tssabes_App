@@ -19,4 +19,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource('/daftar-prestasi', PrestasiController::class);
+Route::get('/daftar-prestasi/remaja',[PrestasiController::class,'prestasiRemaja']);
+Route::get('/daftar-prestasi/sd',[PrestasiController::class,'prestasiSD']);
