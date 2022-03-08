@@ -26,7 +26,7 @@ class GalleryRequest extends FormRequest
         return [
             'title' => 'required',
             'description' => 'required',
-            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+            'image' => 'mimes:jpg,png,jpeg,gif,svg|max:2048|required|image',
         ];
     }
 }

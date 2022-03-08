@@ -41,17 +41,18 @@
                                 <div class="me-1 mb-1 d-inline-block">
                                     <!-- Button trigger for large size modal -->
                                     <button type="button" class="btn btn-outline-info" data-bs-toggle="modal"
-                                        data-bs-target="#large">
+                                        data-bs-target="#large{{$ps->id}}">
                                         Detail
                                     </button>
                                     <!--large size Modal -->
-                                    <div class="modal fade text-left" id="large" tabindex="-1" role="dialog"
+                                    <div class="modal fade text-left" id="large{{$ps->id}}" tabindex="-1" role="dialog"
                                         aria-labelledby="myModalLabel17" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl"
                                             role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h4 class="modal-title" id="myModalLabel17">Detail Prestasi Remaja</h4>
+                                                    <h4 class="modal-title" id="myModalLabel17">Detail Prestasi Remaja
+                                                    </h4>
                                                     <button type="button" class="close" data-bs-dismiss="modal"
                                                         aria-label="Close">
                                                         <i data-feather="x"></i>
@@ -61,48 +62,59 @@
                                                     <div class="col-12 col-md-12">
                                                         <div class="card">
                                                             <div class="card-header">
-                                                                <h4 class="card-title">Table with outer spacing</h4>
+                                                                <h4 class="card-title">Detail Prestasi Siswa</h4>
                                                             </div>
                                                             <div class="card-content">
                                                                 <div class="card-body">
-                                                                    <p class="card-text">Using the most basic table up, here’s how
-                                                                        <code>.table</code>-based tables look in Bootstrap. You can use any example
-                                                                        of below table for your table and it can be use with any type of bootstrap tables.
+                                                                    <p class="card-text">Berikut adalah detail dari prestasi siswa
                                                                     </p>
                                                                     <!-- Table with outer spacing -->
+                                                                    @php
+                                                                        $data = App\Models\achievement::where('id',$ps->id)->first();
+                                                                    @endphp
                                                                     <div class="table-responsive">
                                                                         <table class="table table-lg">
                                                                             <thead>
                                                                                 <tr>
-                                                                                    <th>Nama Lengkap</th>
-                                                                                    <th>{{$ps->id}}</th>
+                                                                                    <th>Nama Pendaftar</th>
+                                                                                    <th></th>
                                                                                 </tr>
                                                                             </thead>
                                                                             <tbody>
                                                                                 <tr>
-                                                                                    <td class="text-bold-500">Michael Right</td>
-                                                                                    <td>$15/hr</td>
-                                        
+                                                                                    <td class="text-bold-500">Nama Lengkap
+                                                                                    </td>
+                                                                                    <td>{{ $data->namaLengkap }}</td>
+
                                                                                 </tr>
                                                                                 <tr>
-                                                                                    <td class="text-bold-500">Morgan Vanblum</td>
-                                                                                    <td>$13/hr</td>
-                                        
+                                                                                    <td class="text-bold-500">Asal Sekolah </td>
+                                                                                    <td>{{ $data->asalSekolah }}</td>
+
                                                                                 </tr>
                                                                                 <tr>
-                                                                                    <td class="text-bold-500">Tiffani Blogz</td>
-                                                                                    <td>$15/hr</td>
-                                        
+                                                                                    <td class="text-bold-500">Tingkatan Sekolah
+                                                                                    </td>
+                                                                                    <td>{{$data->tingkatanSekolah}}</td>
+
                                                                                 </tr>
                                                                                 <tr>
-                                                                                    <td class="text-bold-500">Ashley Boul</td>
-                                                                                    <td>$15/hr</td>
-                                        
+                                                                                    <td class="text-bold-500"> Status
+                                                                                    </td>
+                                                                                    <td>{{$data->status}}</td>
                                                                                 </tr>
                                                                                 <tr>
-                                                                                    <td class="text-bold-500">Mikkey Mice</td>
-                                                                                    <td>$15/hr</td>
-                                        
+                                                                                    <td class="text-bold-500"> Daftar Juara Siswa
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <ul>
+                                                                                            @foreach ($data->daftarJuara as $item)
+                                                                                            <li>
+                                                                                                {{$item['daftarJuara']}}
+                                                                                            </li>
+                                                                                            @endforeach
+                                                                                        </ul>
+                                                                                    </td>
                                                                                 </tr>
                                                                             </tbody>
                                                                         </table>

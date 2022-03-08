@@ -8,7 +8,7 @@
 @endsection
 @section('content')
     <div style="font-family: Nunito" class="p-3">
-        <form action="{{ route('gallery.store') }}" method="post">
+        <form action="{{ route('gallery.store') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>

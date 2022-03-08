@@ -37,18 +37,17 @@
                                 <p class=" mb-0">{{ $dp->noTelp }}</p>
                             </td>
                             <td class="col-auto">
-                                <p class=" mb-0">Daftar Baru</p>
+                                <p class=" mb-0">{{$dp->status}}</p>
                             </td>
                             <td class="col-auto">
-                                <!--Modal lg size -->
                                 <div class="me-1 mb-1 d-inline-block">
                                     <!-- Button trigger for large size modal -->
                                     <button type="button" class="btn btn-outline-info" data-bs-toggle="modal"
-                                        data-bs-target="#large">
+                                        data-bs-target="#large{{$dp->id}}">
                                         Detail
                                     </button>
                                     <!--large size Modal -->
-                                    <div class="modal fade text-left" id="large" tabindex="-1" role="dialog"
+                                    <div class="modal fade text-left" id="large{{$dp->id}}" tabindex="-1" role="dialog"
                                         aria-labelledby="myModalLabel17" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl"
                                             role="document">
@@ -65,56 +64,466 @@
                                                     <div class="col-12 col-md-12">
                                                         <div class="card">
                                                             <div class="card-header">
-                                                                <h4 class="card-title">Table with outer spacing</h4>
+                                                                <h4 class="card-title">Detail Biodata Pendaftar</h4>
                                                             </div>
                                                             <div class="card-content">
                                                                 <div class="card-body">
-                                                                    <p class="card-text">Using the most basic table up,
-                                                                        here’s how
-                                                                        <code>.table</code>-based tables look in Bootstrap.
-                                                                        You can use any example
-                                                                        of below table for your table and it can be use with
-                                                                        any type of bootstrap tables.
+                                                                    <p class="card-text">Berikut adalah detail dari biodata pendaftar (Ulang)
                                                                     </p>
                                                                     <!-- Table with outer spacing -->
+                                                                    @php
+                                                                        $data = App\Models\Register::where('id',$dp->id)->first();
+                                                                    @endphp
                                                                     <div class="table-responsive">
                                                                         <table class="table table-lg">
                                                                             <thead>
                                                                                 <tr>
-                                                                                    <th>Nama Lengkap</th>
-                                                                                    <th>{{ $ps->id }}</th>
+                                                                                    <th>Nama Pendaftar</th>
+                                                                                    <th></th>
                                                                                 </tr>
                                                                             </thead>
                                                                             <tbody>
                                                                                 <tr>
-                                                                                    <td class="text-bold-500">Michael Right
+                                                                                    <td class="text-bold-500">Nama Lengkap
                                                                                     </td>
-                                                                                    <td>$15/hr</td>
+                                                                                    <td>{{ $data->namaLengkap }}</td>
 
                                                                                 </tr>
                                                                                 <tr>
-                                                                                    <td class="text-bold-500">Morgan
-                                                                                        Vanblum</td>
-                                                                                    <td>$13/hr</td>
+                                                                                    <td class="text-bold-500">Asal Sekolah </td>
+                                                                                    <td>{{ $data->asalSekolah }}</td>
 
                                                                                 </tr>
                                                                                 <tr>
-                                                                                    <td class="text-bold-500">Tiffani Blogz
+                                                                                    <td class="text-bold-500">Tingkatan Sekolah
                                                                                     </td>
-                                                                                    <td>$15/hr</td>
+                                                                                    <td>{{$data->tingkatanSekolah}}</td>
 
                                                                                 </tr>
                                                                                 <tr>
-                                                                                    <td class="text-bold-500">Ashley Boul
+                                                                                    <td class="text-bold-500"> Tempat Lahir
                                                                                     </td>
-                                                                                    <td>$15/hr</td>
+                                                                                    <td>{{$data->tempatLahir}}</td>
 
                                                                                 </tr>
                                                                                 <tr>
-                                                                                    <td class="text-bold-500">Mikkey Mice
+                                                                                    <td class="text-bold-500">Tanggal Lahir
                                                                                     </td>
-                                                                                    <td>$15/hr</td>
+                                                                                    <td>{{$data->tanggalLahir}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Jenis Kelamin
+                                                                                    </td>
+                                                                                    <td>{{$data->jenisKelamin}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Usia
+                                                                                    </td>
+                                                                                    <td>{{$data->usia}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Tinggi Badan
+                                                                                    </td>
+                                                                                    <td>{{$data->tinggiBadan}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Berat Badan
+                                                                                    </td>
+                                                                                    <td>{{$data->beratBadan}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Agama
+                                                                                    </td>
+                                                                                    <td>{{$data->agama}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Unit Latihan
+                                                                                    </td>
+                                                                                    <td>{{$data->unitLatihan}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Tingkatan Sabuk
+                                                                                    </td>
+                                                                                    <td>{{$data->tingkatanSabuk}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Riwayat Kesehatan
+                                                                                    </td>
+                                                                                    <td>{{$data->riwayatKesehatan}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">No Telp
+                                                                                    </td>
+                                                                                    <td>{{$data->noTelp}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Alamat
+                                                                                    </td>
+                                                                                    <td>{{$data->alamat}}</td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
 
+                                                                    <div class="table-responsive">
+                                                                        <table class="table table-lg">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th>Data Orang tua / Wali</th>
+                                                                                    <th></th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Nama Lengkap
+                                                                                    </td>
+                                                                                    <td>{{ $data->namaLengkap }}</td>
+
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Asal Sekolah </td>
+                                                                                    <td>{{ $data->asalSekolah }}</td>
+
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Tingkatan Sekolah
+                                                                                    </td>
+                                                                                    <td>{{$data->tingkatanSekolah}}</td>
+
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500"> Tempat Lahir
+                                                                                    </td>
+                                                                                    <td>{{$data->tempatLahir}}</td>
+
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Tanggal Lahir
+                                                                                    </td>
+                                                                                    <td>{{$data->tanggalLahir}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Jenis Kelamin
+                                                                                    </td>
+                                                                                    <td>{{$data->jenisKelamin}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Usia
+                                                                                    </td>
+                                                                                    <td>{{$data->usia}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Tinggi Badan
+                                                                                    </td>
+                                                                                    <td>{{$data->tinggiBadan}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Berat Badan
+                                                                                    </td>
+                                                                                    <td>{{$data->beratBadan}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Agama
+                                                                                    </td>
+                                                                                    <td>{{$data->agama}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Unit Latihan
+                                                                                    </td>
+                                                                                    <td>{{$data->unitLatihan}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Tingkatan Sabuk
+                                                                                    </td>
+                                                                                    <td>{{$data->tingkatanSabuk}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Riwayat Kesehatan
+                                                                                    </td>
+                                                                                    <td>{{$data->riwayatKesehatan}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">No Telp
+                                                                                    </td>
+                                                                                    <td>{{$data->noTelp}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Alamat
+                                                                                    </td>
+                                                                                    <td>{{$data->alamat}}</td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+
+                                                                    <div class="table-responsive">
+                                                                        <table class="table table-lg">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th>Data Orang tua / Wali</th>
+                                                                                    <th></th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Nama Lengkap
+                                                                                    </td>
+                                                                                    <td>{{ $data->namaLengkap }}</td>
+
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Asal Sekolah </td>
+                                                                                    <td>{{ $data->asalSekolah }}</td>
+
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Tingkatan Sekolah
+                                                                                    </td>
+                                                                                    <td>{{$data->tingkatanSekolah}}</td>
+
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500"> Tempat Lahir
+                                                                                    </td>
+                                                                                    <td>{{$data->tempatLahir}}</td>
+
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Tanggal Lahir
+                                                                                    </td>
+                                                                                    <td>{{$data->tanggalLahir}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Jenis Kelamin
+                                                                                    </td>
+                                                                                    <td>{{$data->jenisKelamin}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Usia
+                                                                                    </td>
+                                                                                    <td>{{$data->usia}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Tinggi Badan
+                                                                                    </td>
+                                                                                    <td>{{$data->tinggiBadan}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Berat Badan
+                                                                                    </td>
+                                                                                    <td>{{$data->beratBadan}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Agama
+                                                                                    </td>
+                                                                                    <td>{{$data->agama}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Unit Latihan
+                                                                                    </td>
+                                                                                    <td>{{$data->unitLatihan}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Tingkatan Sabuk
+                                                                                    </td>
+                                                                                    <td>{{$data->tingkatanSabuk}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Riwayat Kesehatan
+                                                                                    </td>
+                                                                                    <td>{{$data->riwayatKesehatan}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">No Telp
+                                                                                    </td>
+                                                                                    <td>{{$data->noTelp}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Alamat
+                                                                                    </td>
+                                                                                    <td>{{$data->alamat}}</td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+
+                                                                    <div class="table-responsive">
+                                                                        <table class="table table-lg">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th>Data Orang tua / Wali</th>
+                                                                                    <th></th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Nama Lengkap
+                                                                                    </td>
+                                                                                    <td>{{ $data->namaLengkap }}</td>
+
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Asal Sekolah </td>
+                                                                                    <td>{{ $data->asalSekolah }}</td>
+
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Tingkatan Sekolah
+                                                                                    </td>
+                                                                                    <td>{{$data->tingkatanSekolah}}</td>
+
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500"> Tempat Lahir
+                                                                                    </td>
+                                                                                    <td>{{$data->tempatLahir}}</td>
+
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Tanggal Lahir
+                                                                                    </td>
+                                                                                    <td>{{$data->tanggalLahir}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Jenis Kelamin
+                                                                                    </td>
+                                                                                    <td>{{$data->jenisKelamin}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Usia
+                                                                                    </td>
+                                                                                    <td>{{$data->usia}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Tinggi Badan
+                                                                                    </td>
+                                                                                    <td>{{$data->tinggiBadan}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Berat Badan
+                                                                                    </td>
+                                                                                    <td>{{$data->beratBadan}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Agama
+                                                                                    </td>
+                                                                                    <td>{{$data->agama}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Unit Latihan
+                                                                                    </td>
+                                                                                    <td>{{$data->unitLatihan}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Tingkatan Sabuk
+                                                                                    </td>
+                                                                                    <td>{{$data->tingkatanSabuk}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Riwayat Kesehatan
+                                                                                    </td>
+                                                                                    <td>{{$data->riwayatKesehatan}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">No Telp
+                                                                                    </td>
+                                                                                    <td>{{$data->noTelp}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Alamat
+                                                                                    </td>
+                                                                                    <td>{{$data->alamat}}</td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+
+                                                                    <div class="table-responsive">
+                                                                        <table class="table table-lg">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th>Data Orang tua / Wali</th>
+                                                                                    <th></th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Nama Lengkap
+                                                                                    </td>
+                                                                                    <td>{{ $data->namaLengkap }}</td>
+
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Asal Sekolah </td>
+                                                                                    <td>{{ $data->asalSekolah }}</td>
+
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Tingkatan Sekolah
+                                                                                    </td>
+                                                                                    <td>{{$data->tingkatanSekolah}}</td>
+
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500"> Tempat Lahir
+                                                                                    </td>
+                                                                                    <td>{{$data->tempatLahir}}</td>
+
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Tanggal Lahir
+                                                                                    </td>
+                                                                                    <td>{{$data->tanggalLahir}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Jenis Kelamin
+                                                                                    </td>
+                                                                                    <td>{{$data->jenisKelamin}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Usia
+                                                                                    </td>
+                                                                                    <td>{{$data->usia}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Tinggi Badan
+                                                                                    </td>
+                                                                                    <td>{{$data->tinggiBadan}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Berat Badan
+                                                                                    </td>
+                                                                                    <td>{{$data->beratBadan}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Agama
+                                                                                    </td>
+                                                                                    <td>{{$data->agama}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Unit Latihan
+                                                                                    </td>
+                                                                                    <td>{{$data->unitLatihan}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Tingkatan Sabuk
+                                                                                    </td>
+                                                                                    <td>{{$data->tingkatanSabuk}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Riwayat Kesehatan
+                                                                                    </td>
+                                                                                    <td>{{$data->riwayatKesehatan}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">No Telp
+                                                                                    </td>
+                                                                                    <td>{{$data->noTelp}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-bold-500">Alamat
+                                                                                    </td>
+                                                                                    <td>{{$data->alamat}}</td>
                                                                                 </tr>
                                                                             </tbody>
                                                                         </table>

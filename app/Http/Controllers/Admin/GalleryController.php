@@ -17,7 +17,8 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        
+        $data = galery::all();
+        return view('Admin.Gallery.Index',compact('data'));
     }
 
     /**
@@ -39,7 +40,7 @@ class GalleryController extends Controller
     public function store(GalleryRequest $request)
     {
         $data = $request->all();
-        $data['image'] = $request->file('image')->storeAs('image/gallery',$request->file('image')->getClietOriginalName(),'public');
+        $data['image'] = $request->file('image')->storeAs('image/foto',$request->file('image')->getClientOriginalName(),'public');
         galery::create($data);
         toast('Berhasil menambahkan gallery','success');
         return back();
