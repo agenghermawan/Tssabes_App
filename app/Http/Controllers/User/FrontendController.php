@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\achievement;
 
 class FrontendController extends Controller
 {
@@ -28,7 +29,10 @@ class FrontendController extends Controller
     }
     public function prestasi()
     {
-        return view('User.Achievement');
+        $achievementList = achievement::all();
+        $achievementSD = achievement::where('status','Prestasi SD')->get();
+        $achievementRemaja = achievement::where('status','Prestasi Remaja')->get();
+        return view('User.Achievement',compact(['achievementList','achievementSD','achievementRemaja']));
     }
 
 }

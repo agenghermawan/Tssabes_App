@@ -59,6 +59,7 @@
 
         <div class="testimonial">
             <h3 style="font-weight: 700;" class="text-center"> Testi </h3>
+            <p class="text-center"> Testimoni dari pengguna </p>
         </div>
 
         <div class="care row mt-5">
