@@ -4,12 +4,14 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\achievement;
+use App\Models\galery;
 
 class FrontendController extends Controller
 {
     public function home()
     {
-        return view('User.Home');
+        $gallery = galery::all();
+        return view('User.Home',compact('gallery'));
     }
     public function profile()
     {

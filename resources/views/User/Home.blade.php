@@ -25,41 +25,67 @@
             <hr class="mt-3">
 
             <div class="image-list row">
-                <div class="col-12 col-md-4 mt-3">
-                    <img class="rounded shadow" width="100%" height="400px"
-                        src="https://lh3.googleusercontent.com/6wikN4aSD55eATfnmtxiI8OZYSHhFHb0gyM8JkvlPvF_ecNgI9x_5qDJKjc6c3qXSJMS4wepYbnn00aL=w768-h768-n-o-v1"
-                        data-iml="403" data-atf="false">
-                </div>
-
-                <div class="col-12 col-md-4 mt-3">
-                    <img class="rounded shadow" width="100%" height="400px"
-                        src="https://lh3.googleusercontent.com/eqZDfoSb-D5EGfg2OyevGDGYs-HMoqP0J7OvXAO3-19aosRyup9Jj7vGZJCFumQF6Ov6Z6qVI-cb6ZG9=w768-h768-n-o-v1"
-                        data-iml="1020" data-atf="false">
-                </div>
-
-                <div class="col-12 col-md-4 mt-3">
-                    <img class="rounded" width="100%" height="400px"
-                        src="https://lh3.googleusercontent.com/VpiJdsLooPJVTTK4Y8lJndV58-xlBjDglLwwb_gdVyNEIK9NoMyCYocwJI9mFWyTKpuVHDr17TJ7Fs9g=w768-h768-n-o-v1"
-                        data-iml="780" data-atf="false">
-                </div>
-
-                <div class="col-12 col-md-4 mt-3">
-                    <img class="rounded shadow" width="100%" height="400px"
-                        src="https://lh3.googleusercontent.com/INpONTNg5RukhnG-lr5PS55OB_Rm1csdbHBCjNZ0V-jBqTFjjQGqcHuog0F3E7m_WSuep2AtDLhDW2lT=w768-h768-n-o-v1"
-                        data-iml="516" data-atf="false">
-                </div>
-
-                <div class="col-12 col-md-4 mt-3">
-                    <img class="rounded shadow" width="100%" height="400px"
-                        src="https://lh3.googleusercontent.com/sTMkEvQFOtRREAD1--YMwcEIYMNsJIXUrDfC70LnMrEVX81dd_iXvLxL5aXxAvnL4PnHQRBR6kk2JJTO=w768-h768-n-o-v1"
-                        data-iml="525" data-atf="false">
-                </div>
+                @foreach ($gallery as $item)
+                    <div class="col-12 col-md-4 mt-3">
+                        <img class="rounded shadow" width="100%" height="300px" src="{{ Storage::url($item->image) }}"
+                            data-iml="403" data-atf="false">
+                    </div>
+                @endforeach
             </div>
         </div>
 
         <div class="testimonial">
             <h3 style="font-weight: 700;" class="text-center"> Testi </h3>
             <p class="text-center"> Testimoni dari pengguna </p>
+            <hr>
+            <div class="row my-5">
+                <div class="col-12 col-md-4 p-3">
+                    <div class="row">
+                        <div class="col-12 col-md-2">
+                            <img src="{{ asset('image/profile-achivment.jpg') }}" width="70px" height="70px"
+                                class="rounded-circle" alt="">
+                        </div>
+                        <div class="col-md-10">
+                            <h3> Will Jansen </h3>
+                            <p> Peserta</p>
+                        </div>
+                    </div>
+                    <p class="fw-light mt-2">
+                        "Kegiatan positif Tapak Suci, selain bela diri seni juga bisa untuk olahraga"
+                    </p>
+                </div>
+                <div class="col-12 col-md-4 p-3">
+                    <div class="row">
+                        <div class="col-12 col-md-2">
+                            <img src="{{ asset('image/profile-achivment.jpg') }}" width="70px" height="70px"
+                                class="rounded-circle" alt="">
+                        </div>
+                        <div class="col-md-10">
+                            <h3> Will Jansen </h3>
+                            <p> Peserta</p>
+                        </div>
+                    </div>
+                    <p class="fw-light mt-2">
+                        "Kegiatan positif Tapak Suci, selain bela diri seni juga bisa untuk olahraga"
+                    </p>
+                </div>
+                <div class="col-12 col-md-4 p-3">
+                    <div class="row">
+                        <div class="col-12 col-md-2">
+                            <img src="{{ asset('image/profile-achivment.jpg') }}" width="70px" height="70px"
+                                class="rounded-circle" alt="">
+                        </div>
+                        <div class="col-md-10">
+                            <h3> Will Jansen </h3>
+                            <p> Peserta</p>
+                        </div>
+                    </div>
+                    <p class="fw-light mt-2">
+                        "Kegiatan positif Tapak Suci, selain bela diri seni juga bisa untuk olahraga"
+                    </p>
+                </div>
+            </div>
+
         </div>
 
         <div class="care row mt-5">
