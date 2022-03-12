@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="hero mt-2 row">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6" data-aos="fade-left">
                 <div class="text-hero mt-5">
                     <h1> Padepokan Rajawali <br> Perguruan Bela diri </h1>
                 </div>
@@ -14,7 +14,7 @@
                     <button class="btn btn-primary mt-3"> WhatsApp : 0812-8400-7005</button>
                 </div>
             </div>
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6" data-aos="fade-right">
                 <img src="{{ asset('image/banner.jpg') }}" width="100%" height="550px" class="shadow"
                     style="border-radius: 80%" alt="">
             </div>
@@ -26,20 +26,20 @@
 
             <div class="image-list row">
                 @foreach ($gallery as $item)
-                    <div class="col-12 col-md-4 mt-3">
-                        <img class="rounded shadow" width="100%" height="300px" src="{{ Storage::url($item->image) }}"
+                    <div class="col-12 col-md-4 mt-3" data-aos="fade-right" data-aos-offset="300"
+                        data-aos-easing="ease-in-sine">
+                        <img class="rounded shadow" width="100%" height="300px" src="{{ url($item->image) }}"
                             data-iml="403" data-atf="false">
                     </div>
                 @endforeach
             </div>
         </div>
 
-        <div class="testimonial">
+        <div class="testimonial" style="">
             <h3 style="font-weight: 700;" class="text-center"> Testi </h3>
             <p class="text-center"> Testimoni dari pengguna </p>
-            <hr>
             <div class="row my-5">
-                <div class="col-12 col-md-4 p-3">
+                <div class="col-12 col-md-4 p-3" data-aos="fade-down-right" data-aos-duration="3000">
                     <div class="row">
                         <div class="col-12 col-md-2">
                             <img src="{{ asset('image/profile-achivment.jpg') }}" width="70px" height="70px"
@@ -54,7 +54,7 @@
                         "Kegiatan positif Tapak Suci, selain bela diri seni juga bisa untuk olahraga"
                     </p>
                 </div>
-                <div class="col-12 col-md-4 p-3">
+                <div class="col-12 col-md-4 p-3" data-aos="fade-down-right" data-aos-duration="3000">
                     <div class="row">
                         <div class="col-12 col-md-2">
                             <img src="{{ asset('image/profile-achivment.jpg') }}" width="70px" height="70px"
@@ -69,7 +69,7 @@
                         "Kegiatan positif Tapak Suci, selain bela diri seni juga bisa untuk olahraga"
                     </p>
                 </div>
-                <div class="col-12 col-md-4 p-3">
+                <div class="col-12 col-md-4 p-3" data-aos="fade-down-right" data-aos-duration="3000">
                     <div class="row">
                         <div class="col-12 col-md-2">
                             <img src="{{ asset('image/profile-achivment.jpg') }}" width="70px" height="70px"

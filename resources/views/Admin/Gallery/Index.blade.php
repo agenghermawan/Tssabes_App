@@ -17,7 +17,7 @@
                         @foreach ($data as $dt)
                             <div class="col-6 col-sm-6 col-lg-3 mt-2 mt-md-0 mb-md-0 mb-2 ">
                                 <a href="#">
-                                    <img class="w-100 active my-2" src="{{ Storage::url($dt->image) }}"
+                                    <img class="w-100 active my-2" src="{{ url($dt->image) }}"
                                         data-bs-target="#Gallerycarousel" data-bs-slide-to="0" height="300px">
                                 </a>
                             </div>

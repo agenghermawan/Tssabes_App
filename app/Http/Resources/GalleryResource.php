@@ -17,7 +17,7 @@ class GalleryResource extends JsonResource
         return [
             'title' => $this->title,
             'description' => $this->description,
-            'image' => $this->image,
+            'image' => $this->image
         ];
     }
 }

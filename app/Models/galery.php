@@ -9,4 +9,10 @@ class galery extends Model
 {
     protected $guarded = [];
     use HasFactory;
+
+    public function getimageAttribute($value)
+    {
+        return url('storage/'.$value);
+    }
+
 }
