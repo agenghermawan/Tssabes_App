@@ -15,9 +15,11 @@ class GalleryResource extends JsonResource
     public function toArray($request)
     {
         return [
+            'id' => $this->id,
             'title' => $this->title,
             'description' => $this->description,
-            'image' => $this->image
+            'image' => $this->image,
+            'created_at' => $this->created_at
         ];
     }
 }

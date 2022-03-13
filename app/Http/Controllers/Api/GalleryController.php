@@ -16,7 +16,7 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        return GalleryResource::collection(galery::all());
+        return GalleryResource::collection(galery::paginate(5));
     }
 
     /**
@@ -38,7 +38,7 @@ class GalleryController extends Controller
      */
     public function show($id)
     {
-        //
+        return new GalleryResource(galery::find($id));
     }
 
     /**
