@@ -28,7 +28,6 @@ class PrestasiRequest extends FormRequest
             'asalSekolah' => ['required','max:255'],
             'tingkatanSekolah' => ['required'],
             'status' => ['required'],
-            'daftarJuara' => ['required'],
         ];
     }
 }

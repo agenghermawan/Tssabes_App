@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Models\ListAchievement;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class PrestasiResource extends JsonResource
@@ -20,7 +21,7 @@ class PrestasiResource extends JsonResource
             'asalSekolah' => $this->asalSekolah,
             'tingkatanSekolah' => $this->tingkatanSekolah,
             'status' => $this->status,
-            'daftarJuara' => $this->daftarJuara,
+            'daftarJuara' => ListAchievement::where('achievements_id',$this->id)->get(),
         ];
     }
 

@@ -9,6 +9,10 @@ use Illuminate\Http\Request;
 
 class PrestasiController extends Controller
 {
+    public function index()
+    {
+        return PrestasiResource::collection(achievement::paginate(5));
+    }
     public function prestasiRemaja()
     {
         return PrestasiResource::collection(achievement::where('status','Prestasi Remaja')->paginate(5));
