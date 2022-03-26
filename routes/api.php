@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Api\GalleryController;
 use App\Http\Controllers\Api\PrestasiController;
+use App\Http\Controllers\Api\RegisterController;
+use App\Http\Controllers\Api\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -25,3 +27,11 @@ Route::get('/daftar-prestasi/sd',[PrestasiController::class,'prestasiSD']);
 Route::get('/daftar-prestasi',[PrestasiController::class,'index']);
 
 Route::apiResource('/daftar-gallery',GalleryController::class);
+// Route::apiResource('/register-api', UserController::class);
+
+Route::post('register-api',[RegisterController::class,'register']);
+Route::post('login-api',[RegisterController::class,'login']);
+
+Route::middleware('auth:sanctum')->group(function () {
+    Route::post('logout-api',[RegisterController::class,'logout']);
+});
