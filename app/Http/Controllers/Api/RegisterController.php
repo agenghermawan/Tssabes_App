@@ -82,7 +82,6 @@ class RegisterController extends Controller
     public function logout(Request $request)
     {
         $token = $request->user()->currentAccessToken();
-        dd($token);
         return response()->json([
             "data" => $token,
             "meta" => [
