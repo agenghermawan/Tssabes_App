@@ -3,7 +3,9 @@
 namespace Database\Seeders;
 
 use App\Models\Register;
+use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class PendaftaranSeeder extends Seeder
 {
@@ -14,27 +16,12 @@ class PendaftaranSeeder extends Seeder
      */
     public function run()
     {
-        // $gender = array(['Laki Laki','Perempuan']);
-        // $randomGender = array_rand($gender);
-        // Register::create([
-        //     'namaLengkap' => $this->faker->name(),
-        //     'email' => $this->faker->email(),
-        //     'tempatLahir' => $this->faker->city(),
-        //     'tanggalLahir' => $this->faker->dateTime(),
-        //     'jenisKelamin' => $randomGender,
-        //     'usia' => rand('10','30'),
-        //     'tinggiBadan' => rand('150','180'),
-        //     'beratBadan' => rand('50','80'),
-        //     'agama' => 'Islam',
-        //     'asalSekolah' => 'SDN 05 Pagi',
-        //     'tingkatanSekolah' => 'Kelas 9',
-        //     'unitLatihan' => 'Karate',
-        //     'tingkatanSabuk' => 'Hitam',
-        //     'riwayatKesehatan' => 'Sehat',
-        //     'alamat' => $this->faker->address(),
-        //     'noTelp' => $this->faker->sentence(1),
-        //     'foto' => $this->faker->image(null, 640, 480),
-        //     'akte' => $this->faker->image(null, 640, 480),
-        // ]);
+        User::create([
+            'namaLengkap' => 'admin',
+            'alamat' => 'jakarta',
+            'tanggalLahir' => now(),
+            'email' => 'admin@gmail.com',
+            'password' => Hash::make('irwansyah123'),
+        ]);
     }
 }
