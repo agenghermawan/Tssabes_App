@@ -1,4 +1,4 @@
-@extends('Admin.Layout.Main')
+@extends('Admin.Layout.main')
 @section('title')
     Prestasi SDs
 @endsection
