@@ -34,7 +34,7 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->middleware('auth')
                 ->name('logout');
 
-                Route::get('/login', [AuthenticatedSessionController::class, 'index'])
+Route::get('/login', [AuthenticatedSessionController::class, 'index'])
                 ->name('login.index');
 
             
