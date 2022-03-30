@@ -15,5 +15,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
-    return $request->user();
+    Route::post('logout-api',[RegisterController::class,'logout']);
 });
+
+
+Route::get('/daftar-prestasi/remaja',[PrestasiController::class,'prestasiRemaja']);
+Route::get('/daftar-prestasi/sd',[PrestasiController::class,'prestasiSD']);
+Route::get('/daftar-prestasi',[PrestasiController::class,'index']);
+
+Route::apiResource('/daftar-gallery',GalleryController::class);
+// Route::apiResource('/register-api', UserController::class);
+
+Route::post('register-api',[RegisterController::class,'register']);
+Route::post('login-api',[RegisterController::class,'login']);
