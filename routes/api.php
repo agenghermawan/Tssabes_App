@@ -1,7 +1,11 @@
 <?php
 
+use App\Http\Controllers\Api\GalleryController;
+use App\Http\Controllers\Api\PrestasiController;
+use App\Http\Controllers\Api\RegisterController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
