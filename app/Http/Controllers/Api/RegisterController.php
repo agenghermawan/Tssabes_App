@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\UserResource;
+use App\Models\Register;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -101,6 +102,44 @@ class RegisterController extends Controller
                 'status' => 'success',
             ],
             UserResource::collection($data),
+        ]);
+    }
+    public function daftarUlang(Request $request)
+    {
+        $data = $request->all();
+        Validator::make($data, [
+            'namaLengkap' => 'required',
+            'email' => 'email|unique:registers',
+            'tempatLahir' => 'required',
+            'tanggalLahir' => 'required',
+            'jenisKelamin' => 'required',
+            'usia' => 'required',
+            'tinggiBadan' => 'required',
+            'beratBadan' => 'required',
+            'agama' => 'required',
+            'asalSekolah' => 'required',
+            'tingkatanSekolah' => 'required',
+            'unitLatihan' => 'required',
+            'tingkatanSabuk' => 'required',
+            'riwayatKesehatan' => 'required',
+            'alamat' => 'required',
+            'noTelp' => 'required',
+            'foto' => 'required|image:png,jpeg,jpg',
+            'akte' => 'required|image:png,jpeg,jpg',
+            'status' => 'required',
+        ])->validate();
+
+        $data['foto'] = $request->file('foto')->storeAs('image/daftar', $request->file('foto')->getClientOriginalName(), 'public');
+        $data['akte'] = $request->file('akte')->storeAs('image/akte', $request->file('akte')->getClientOriginalName(), 'public');
+
+        Register::create($data);
+
+        return response()->json([
+            'meta' => [
+                'status' => 'Succesfully',
+                'code' => '201'
+            ],
+            'data' => $data
         ]);
     }
 }

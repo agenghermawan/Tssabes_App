@@ -27,6 +27,9 @@ Route::get('/daftar-prestasi/remaja',[PrestasiController::class,'prestasiRemaja'
 Route::get('/daftar-prestasi/sd',[PrestasiController::class,'prestasiSD']);
 Route::get('/daftar-prestasi',[PrestasiController::class,'index']);
 
+Route::post('daftar-ulang', [RegisterController::class,'daftarUlang']);
+
+
 Route::apiResource('/daftar-gallery',GalleryController::class);
 // Route::apiResource('/register-api', UserController::class);
 
