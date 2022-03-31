@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
+Route::middleware(['auth:sanctum'])->group(function() {
     Route::post('logout-api',[RegisterController::class,'logout']);
 });
 
