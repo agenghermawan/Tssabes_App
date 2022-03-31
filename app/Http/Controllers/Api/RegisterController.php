@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\UserResource;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -88,6 +89,18 @@ class RegisterController extends Controller
                 "message" => "revoked",
                 "status" => "token revoked",
             ],
+        ]);
+    }
+
+    public function users()
+    {
+        $data = User::with('statistic')->paginate(5);
+        return response()->json([
+            'meta' => [
+                'code' => 200,
+                'status' => 'success',
+            ],
+            UserResource::collection($data),
         ]);
     }
 }
