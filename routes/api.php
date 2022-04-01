@@ -37,3 +37,4 @@ Route::post('register-api',[RegisterController::class,'register']);
 Route::post('login-api',[RegisterController::class,'login']);
 
 Route::get('/users',[RegisterController::class,'users']);
+Route::get('/users/{id}',[RegisterController::class ,'show']);

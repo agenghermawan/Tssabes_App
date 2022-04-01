@@ -44,4 +44,31 @@ class RegisterRequest extends FormRequest
             'foto' => 'required|image:jpg,png',
         ];
     }
+    public function messages()
+    {
+        return [
+            'namaLengkap.required' => 'Nama Lengkap harus diisi',
+            'email.required' => 'Email harus diisi',
+            'email.unique' => 'Email sudah terdaftar',
+            'tempatLahir.required' => 'Tempat Lahir harus diisi',
+            'tanggalLahir.required' => 'Tanggal Lahir harus diisi',
+            'jenisKelamin.required' => 'Jenis Kelamin harus diisi',
+            'usia.required' => 'Usia anda harus diisi',
+            'tinggiBadan.required' => 'Masukan tinggi badan anda ',
+            'beratBadan.required' => 'Berat badan harus diisi',
+            'agama.required' => 'agama harus diisi',
+            'asalSekolah.required' => 'Asal sekolah harus diisi',
+            'tingkatanSekolah.required' => 'Tingkatan Sekolah harus diisi',
+            'unitLatihan.required' => 'Unit Latihan harus diisi',
+            'tingkatanSabuk.required' => 'Tingkatan Sabuk harus diisi',
+            'riwayatKesehatan.required' => 'Riwayat Kesehatan harus diisi',
+            'alamat.required' => 'Alamat harus diisi',
+            'noTelp.required' => 'No Telp harus diisi',
+            'noTelp.unique' => 'No Telp Sudah terdaftar',
+            'akte.required' => 'Akte harus diisi',
+            'akte.image' => 'Akte harus berisi Image ',
+            'foto.required' => 'Foto harus diisi',
+            'foto.image' => 'Foto harus image',
+        ];
+    }
 }

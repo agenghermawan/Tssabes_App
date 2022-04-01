@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RegisterRequest;
 use App\Http\Resources\UserResource;
 use App\Models\Register;
 use App\Models\User;
@@ -104,30 +105,33 @@ class RegisterController extends Controller
             UserResource::collection($data),
         ]);
     }
-    public function daftarUlang(Request $request)
+
+    public function show($id)
+    {
+        $checkUser = User::where('id',$id)->first();
+        if($checkUser == null){
+            return response()->json([
+                'meta' => [
+                    'status' => 'error',
+                    'message' => 'id not found'
+                ],
+            ]);
+        }else{
+            $data = new UserResource(User::with('statistic')->where('id',$id)->first());
+          
+            return response()->json([
+                'meta' => [
+                    'status' => 'success',
+                    'code' => 200,
+                ],
+                'data' => $data
+            ]);
+        }
+    }
+
+    public function daftarUlang(RegisterRequest $request)
     {
         $data = $request->all();
-        Validator::make($data, [
-            'namaLengkap' => 'required',
-            'email' => 'email|unique:registers',
-            'tempatLahir' => 'required',
-            'tanggalLahir' => 'required',
-            'jenisKelamin' => 'required',
-            'usia' => 'required',
-            'tinggiBadan' => 'required',
-            'beratBadan' => 'required',
-            'agama' => 'required',
-            'asalSekolah' => 'required',
-            'tingkatanSekolah' => 'required',
-            'unitLatihan' => 'required',
-            'tingkatanSabuk' => 'required',
-            'riwayatKesehatan' => 'required',
-            'alamat' => 'required',
-            'noTelp' => 'required',
-            'foto' => 'required|image:png,jpeg,jpg',
-            'akte' => 'required|image:png,jpeg,jpg',
-            'status' => 'required',
-        ])->validate();
 
         $data['foto'] = $request->file('foto')->storeAs('image/daftar', $request->file('foto')->getClientOriginalName(), 'public');
         $data['akte'] = $request->file('akte')->storeAs('image/akte', $request->file('akte')->getClientOriginalName(), 'public');
@@ -136,7 +140,7 @@ class RegisterController extends Controller
 
         return response()->json([
             'meta' => [
-                'status' => 'Succesfully',
+                'status' => 'success',
                 'code' => '201'
             ],
             'data' => $data
