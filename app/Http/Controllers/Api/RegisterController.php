@@ -137,7 +137,6 @@ class RegisterController extends Controller
         $data['akte'] = $request->file('akte')->storeAs('image/akte', $request->file('akte')->getClientOriginalName(), 'public');
 
         Register::create($data);
-
         return response()->json([
             'meta' => [
                 'status' => 'success',
