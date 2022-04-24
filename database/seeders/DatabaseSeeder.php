@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             PendaftaranSeeder::class,
         ]);
-//        \App\Models\User::factory(10)->create();
-        \App\Models\Register::factory(10)->create();
+// //        \App\Models\User::factory(10)->create();
+//         \App\Models\Register::factory(10)->create();
     }
 }

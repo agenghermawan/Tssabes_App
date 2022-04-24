@@ -2,28 +2,29 @@
 @section('footer', 'fixed-bottom')
 @section('content')
     <div class="container">
-        {{-- @if ($errors->any())
+        @if ($errors->any())
         <div class="alert alert-danger">
+        <p class="text-center fs-4 font-weight-bold text-primary alert-danger"> Pendaftaran Gagal </p>
                 <ul>
                     @foreach ($errors->all() as $error)
                         <li>{{ $error }}</li>
                     @endforeach
                 </ul>
             </div>
-        @endif --}}
+        @endif
         <div class="row my-5">
             <div class="col-12 col-md-6">
                 <img src="{{ asset('image/image.jpg') }}" width="100%" height="400px" alt="">
             </div>
             <div class="col-12 col-md-6">
-                <h3> Pendaftaran </h3>
-                <p> Sebelum melakukan pendaftaran baca terlebih dahulu aturan atau tata tertibnya nya <a
-                        href="{{ route('Rules') }}">
-                        disini </a> </p>
-                <form action="{{ route('register.store') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('register.store')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <input type="hidden" name="status" value="PendaftaranUlang">
                     <div class="first-form" id="first-form">
+                        <h3> Pendaftaran ( Data diri Peserta ) </h3>
+                        <p> Sebelum melakukan pendaftaran baca terlebih dahulu aturan atau tata tertibnya nya <a
+                                href="{{ route('Rules') }}">
+                                disini </a> </p>
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -87,7 +88,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="email"> Usia :</label>
-                                    <input type="number" class="form-control shadow-sm rounded-xl" name="usia"
+                                    <input type="number" class="form-control shadow-sm rounded-xl" name="usia"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
                                         value="{{ old('usia') }}">
                                     @error('usia')
                                         <div class="text-danger">{{ $message }}</div>
@@ -99,7 +100,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="email"> Tinggi Badan :</label>
-                                    <input type="number" class="form-control shadow-sm rounded-xl" name="tinggiBadan"
+                                    <input type="number" class="form-control shadow-sm rounded-xl" name="tinggiBadan"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
                                         value="{{ old('tinggiBadan') }}">
                                     @error('tinggiBadan')
                                         <div class="text-danger">{{ $message }}</div>
@@ -110,7 +111,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="email"> Berat Badan :</label>
-                                    <input type="number" class="form-control shadow-sm rounded-xl" name="beratBadan"
+                                    <input type="number" class="form-control shadow-sm rounded-xl" name="beratBadan" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
                                         value="{{ old('beratBadan') }}">
                                     @error('beratBadan')
                                         <div class="text-danger">{{ $message }}</div>
@@ -122,11 +123,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="email"> Agama :</label>
-                                    <select name="agama" class="form-control" id="agama">
-                                        <option value="Islam"> Islam </option>
-                                        <option value="Hindu"> Hindu </option>
-                                        <option value="Budha"> Budha </option>
-                                    </select>
+                                    <input type="text" name="agama" class="form-control" id="agama">
                                     @error('agama')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
@@ -212,10 +209,6 @@
                                 </div>
                             </div>
                         </div>
-                        <a class="btn btn-info" id="hide"> Selanjutnya </a>
-                    </div>
-
-                    <div class="row my-3" id="second-form" style="display: none">
                         <div class="col-md-12 my-3">
                             <label for="foto" class="mb-2"> Foto(Background Putih Menggunakan Baju Tapak Suci)
                             </label>
@@ -231,10 +224,175 @@
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
+
+                        <a
+                        class="cssbuttons-io-button mt-3"
+                        id="hide"
+                      >
+                        Selanjutnya
+                        <div class="icon">
+                          <svg
+                            height="24"
+                            width="24"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path d="M0 0h24v24H0z" fill="none"></path>
+                            <path
+                              d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                              fill="currentColor"
+                            ></path>
+                          </svg>
+                        </div>
+                      </a>
+                    </div>
+
+                    <!-- Second Form -->
+
+                    <div class="row my-3" id="second-form" style="display: none">
+                        <h3> Pendaftaran ( Data diri Orang Tua / Wali ) </h3>
+                        <p> Sebelum melakukan pendaftaran baca terlebih dahulu aturan atau tata tertibnya nya <a
+                                href="{{ route('Rules') }}">
+                                disini </a> </p>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="email"> Nama Orang Tua / Wali :</label>
+                                    <input type="text" class="form-control shadow-sm rounded-xl" name="namaLengkap_wali"
+                                        value="{{ old('namaLengkap_wali') }}">
+                                    @error('namaLengkap_wali')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="email_wali"> Email :</label>
+                                    <input type="email" class="form-control shadow-sm rounded-xl" name="email_wali"
+                                        value="{{ old('email_wali') }}">
+                                    @error('email_wali')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="email"> Tempat Lahir :</label>
+                                    <input type="text" class="form-control shadow-sm rounded-xl" name="tempatLahir_wali"
+                                        value="{{ old('tempatLahir_wali') }}">
+                                    @error('tempatLahir_wali')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="email"> Tanggal Lahir :</label>
+                                    <input type="date" class="form-control shadow-sm rounded-xl" name="tanggalLahir_wali"
+                                        value="{{ old('tanggalLahir_wali') }}">
+                                    @error('tanggalLahir_wali')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="email"> Jenis Kelamin :</label>
+                                    <select name="jenisKelamin_wali" class="form-control" id="jenisKelamin">
+                                        <option value="LakiLaki"> Laki Laki </option>
+                                        <option value="Perempuan"> Perempuan </option>
+                                    </select>
+                                    @error('jenisKelamin_wali')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="email"> Usia :</label>
+                                    <input type="number" class="form-control shadow-sm rounded-xl"  name="usia_wali" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                                        value="{{ old('usia_wali') }}">
+                                    @error('usia_wali')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="email"> Agama :</label>
+                                    <input type="text" class="form-control shadow-sm rounded-xl"  name="agama_wali">
+                                    @error('agama_wali')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="email"> Pekerjaan :</label>
+                                    <input type="text" class="form-control shadow-sm rounded-xl"  name="pekerjaan_wali">
+                                    @error('pekerjaan_wali')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="alamat_wali"> Alamat :</label>
+                                    <input type="text" class="form-control shadow-sm rounded-xl"  name="alamat_wali">
+                                    @error('alamat_wali')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="email"> No Telp :</label>
+                                    <input type="text" class="form-control shadow-sm rounded-xl"  name="noTelp_wali">
+                                    @error('noTelp_wali')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                     
+                        <div class="col-md-12 my-3">
+                            <label for="foto" class="mb-2"> Foto Orang Tua / Wali
+                            </label>
+                            <input type="file" class="form-control" name="foto_wali" value="{{ old('foto') }}">
+                            @error('foto_wali')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="col-md-12 my-3"><label for="foto" class="mb-2" style="text-align:justify">Menyetujui apa saja yang tertera dalam Peraturan Pusat Pembinaan Pendidikan Latihan (PUSBINDIKLAT) GEMILANG serta mempercayakan penuh terhadap kebijakan pengurus dan pelatih dalam melaksanakan program ini.</label><input type="checkbox" id="aggrement" name="aggrement" value="Agre" required=""><label for="aggrement"> &nbsp; Setuju</label><br></div>
                         <div class="row">
                             <div class="container">
-                                <a type="submit" class="btn btn-info my-2" id="back"> Kembali </a>
-                                <button type="button" class="btn btn-info" data-bs-toggle="modal"
+                                
+                                <a type="submit" class="btn btn-info my-2" 
+                                style="
+                                border-radius: 20px;
+                                padding: 12px 30px;
+                                font-weight: 500;
+                                color:white"
+                                id="back"> Kembali </a>
+                                <button type="button" class="btn btn-info"   
+                                style="
+                                border-radius: 20px;
+                                padding: 12px 30px;
+                                font-weight: 500;
+                                color:white" data-bs-toggle="modal"
                                     data-bs-target="#exampleModal">
                                     Lakukan Pendaftaran
                                 </button>

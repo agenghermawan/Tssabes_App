@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RegisterRequest;
 use App\Http\Resources\UserResource;
+use App\Models\ParentUser;
 use App\Models\Register;
 use App\Models\User;
 use Carbon\Carbon;
@@ -129,20 +130,51 @@ class RegisterController extends Controller
         }
     }
 
-    public function daftarUlang(RegisterRequest $request)
+    public function daftarUlang(Request $request)
     {
-        $data = $request->all();
+        dd($request);
+        $peserta = new Register;
+        $peserta->namaLengkap = $request->namaLengkap;
+        $peserta->email = $request->email;
+        $peserta->tempatLahir = $request->tempatLahir;
+        $peserta->tanggalLahir = $request->tanggalLahir;
+        $peserta->jenisKelamin = $request->jenisKelamin;
+        $peserta->usia = $request->usia;
+        $peserta->tinggiBadan = $request->tinggiBadan;
+        $peserta->beratBadan = $request->beratBadan;
+        $peserta->agama = $request->agama;
+        $peserta->asalSekolah = $request->asalSekolah;
+        $peserta->tingkatanSabuk = $request->tingkatanSabuk;
+        $peserta->tingkatanSekolah = $request->tingkatanSekolah;
+        $peserta->unitLatihan = $request->unitLatihan;
+        $peserta->riwayatKesehatan = $request->riwayatKesehatan;
+        $peserta->alamat = $request->alamat;
+        $peserta->noTelp = $request->noTelp;
+        $peserta->foto = $request->file('foto')->storeAs('image/daftar', $request->file('foto')->getClientOriginalName(), 'public');
+        $peserta->akte = $request->file('akte')->storeAs('image/akte', $request->file('akte')->getClientOriginalName(), 'public');
+        $peserta->save();
 
-        $data['foto'] = $request->file('foto')->storeAs('image/daftar', $request->file('foto')->getClientOriginalName(), 'public');
-        $data['akte'] = $request->file('akte')->storeAs('image/akte', $request->file('akte')->getClientOriginalName(), 'public');
+        $parent = new ParentUser;
+        $parent->id = $peserta->id;
+        $parent->email = $request->emailParent;
+        $parent->namaLengkap = $request->namaLengkapParent;
+        $parent->tempatLahir = $request->tempatLahirParent;
+        $parent->jenisKelamin = $request->jenisKelaminParent;
+        $parent->usia = $request->usiaParent;
+        $parent->tinggiBadan = $request->tinggiBadanParent;
+        $parent->beratBadan = $request->beratBadanParent;
+        $parent->agama = $request->agamaParent;
+        $parent->pekerjaan = $request->pekerjaanParent;
+        $parent->alamat = $request->alamatParent;
+        $parent->noTelp = $request->noTelpParent;
+        $parent->foto = $request->file('fotoParent')->storeAs('image/fotoParent', $request->file('fotoParent')->getClientOriginalName(), 'public');
+        $parent->save();
 
-        Register::create($data);
         return response()->json([
             'meta' => [
                 'status' => 'success',
                 'code' => '201'
             ],
-            'data' => $data
         ]);
     }
 }

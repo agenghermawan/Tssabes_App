@@ -22,14 +22,39 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return ['Laravel' => app()->version()];
+//PENTING SLURRRR
+Route::get('/generate', function (){
+    Artisan::call('storage:link');
+    echo 'ok';
+});
+Route::get('/optimize', function() {
+    $exitCode = Artisan::call('optimize');
+    return 'DONE'; //Return anything
 });
 
+Route::get('/linkstorage', function () { $targetFolder = base_path().'/storage/app/public'; $linkFolder = $_SERVER['DOCUMENT_ROOT'].'/storage'; symlink($targetFolder, $linkFolder); });
+
+
+// User
+Route::get('/', [FrontendController::class, 'home'])->name('Home');
+Route::get('/profile',[FrontendController::class, 'profile'])->name('Profile');
+Route::get('/tentang-kami',[FrontendController::class, 'tentangKami'])->name('AboutMe');
+Route::get('/tata-tertib',[FrontendController::class, 'rules'])->name('Rules');
+
+Route::get('/prestasi',[FrontendController::class, 'prestasi'])->name('Prestasi');
+Route::get('/daftar',[FrontendController::class,'register'])->name('Register-user');
+
+Route::post('/register/store', [RegisterController::class, 'register'])->name('register.store');
+Route::resource('/register', RegisterController::class);
+
+
+// Route::get('/', function () {
+//     return ['Laravel' => app()->version()];
+// });
 
 Route::middleware('auth')->group(function (){
     // Admin
-    Route::get('/',[DashboardController::class,'index'])->name('Dashboard');
+    Route::get('/dashboard',[DashboardController::class,'index'])->name('Dashboard');
     Route::get('/pendaftaran-baru',[\App\Http\Controllers\Admin\PendaftaranController::class , 'pendaftaranBaru'])->name('pendaftarn-baru');
     Route::get('/pendaftaran-ulang',[\App\Http\Controllers\Admin\PendaftaranController::class , 'pendaftaranUlang'])->name('pendaftarn-ulang');
     
