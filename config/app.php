@@ -168,7 +168,7 @@ return [
          * Package Service Providers...
          */
         RealRashid\SweetAlert\SweetAlertServiceProvider::class,
-        
+        FruitCake\Cors\CorsServiceProvider::class,
         /*
          * Application Service Providers...
          */

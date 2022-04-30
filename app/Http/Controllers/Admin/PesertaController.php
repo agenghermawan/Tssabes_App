@@ -13,7 +13,7 @@ class PesertaController extends Controller
     public function index()
     {
         $data = array(
-            'user' => User::with('statistic')->get(),
+            'user' => User::with('statistic')->where('namaLengkap', '!=' ,'admin')->get(),
         );
         return view('Admin.Peserta.index',compact('data'));
     }

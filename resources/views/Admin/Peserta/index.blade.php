@@ -1,9 +1,9 @@
 @extends('Admin.Layout.main')
 @section('title')
-    Pendaftaran Baru
+    Daftar Peserta
 @endsection
 @section('description')
-    Daftar Siswa yang mendaftar ( Baru )
+    Daftar Peserta
 @endsection
 @section('breadcumb-title', 'Pendaftaran')
 @section('content')
@@ -13,17 +13,30 @@
                 <thead>
                     <tr>
                         <th>Nama Lengkap</th>
-                        <th>Asal Sekolah</th>
-                        <th>Tingkatan Sekolah</th>
-                        <th>Status</th>
+                        <th>Alamat </th>
+                        <th>Tanggal Lahir</th>
                         <th>Statistic Peserta</th>
-                        <th>Detail</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($data['user'] as $item)
+                        <tr>
+                            <td>
+                                {{ $item->namaLengkap }}
+                            </td>
+                            <td>
+                                {{ $item->alamat }}
+                            </td>
+                            <td>
+                                {{ $item->tanggalLahir }}
+                            </td>
+                            <td>
+                                <a class="btn btn-info"> Statistic </a>
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
     </div>
-
 @endsection
