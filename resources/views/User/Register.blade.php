@@ -17,7 +17,7 @@
                 <img src="{{ asset('image/image.jpg') }}" width="100%" height="400px" alt="">
             </div>
             <div class="col-12 col-md-6">
-                <form action="{{ route('register.store')}}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('register.store.user')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <input type="hidden" name="status" value="PendaftaranUlang">
                     <div class="first-form" id="first-form">
@@ -226,7 +226,7 @@
                         </div>
 
                         <a
-                        class="cssbuttons-io-button mt-3"
+                        class="cssbuttons-io-button mt-3" style="width:50%"
                         id="hide"
                       >
                         Selanjutnya

@@ -44,8 +44,8 @@ Route::get('/tata-tertib',[FrontendController::class, 'rules'])->name('Rules');
 Route::get('/prestasi',[FrontendController::class, 'prestasi'])->name('Prestasi');
 Route::get('/daftar',[FrontendController::class,'register'])->name('Register-user');
 
-Route::post('/register/store', [RegisterController::class, 'register'])->name('register.store');
-Route::resource('/register', RegisterController::class);
+Route::post('/register/store/user', [RegisterController::class, 'register'])->name('register.store.user');
+// Route::resource('/register', RegisterController::class);
 
 
 // Route::get('/', function () {
@@ -57,17 +57,17 @@ Route::middleware('auth')->group(function (){
     Route::get('/dashboard',[DashboardController::class,'index'])->name('Dashboard');
     Route::get('/pendaftaran-baru',[\App\Http\Controllers\Admin\PendaftaranController::class , 'pendaftaranBaru'])->name('pendaftarn-baru');
     Route::get('/pendaftaran-ulang',[\App\Http\Controllers\Admin\PendaftaranController::class , 'pendaftaranUlang'])->name('pendaftarn-ulang');
-    
+
     // Prestasi
-    
+
     Route::get('/admin/prestasi-sd',[PrestasiController::class, 'prestasiSD'])->name('prestasi-sd');
     Route::get('/admin/prestasi-remaja',[PrestasiController::class, 'prestasiRemaja'])->name('prestasi-remaja');
     Route::resource('/admin/prestasi', PrestasiController::class);
     Route::resource('/admin/gallery', GalleryController::class);
-    
+
     Route::get('/peserta', [PesertaController::class, 'index'])->name('peserta.index');
     Route::get('/statistic/{IdPeserta}', [PesertaController::class, 'statistic'])->name('statistic');
-    
+
     Route::get('/peserta/statistik', [PesertaController::class, 'create'])->name('peserta.create');
     Route::post('/peserta/statistik',[PesertaController::class,'store'])->name('statistik.store');
 });

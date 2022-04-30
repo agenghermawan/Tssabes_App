@@ -13,8 +13,7 @@ class="h-100 w-100 bg-white"
         class="img-fluid"
         src={{asset('image/profile.png')}}
         alt="image"
-        width="643px"
-        height="537px"
+      
       />
     </div>
 
@@ -62,16 +61,16 @@ class="h-100 w-100 bg-white"
         </li>
       </ul>
       <div class="row">
-        <div class="col-auto">
+        <div class="col-md-6 col-12 my-2">
           <a class="btn btn-learn text-white">
             <i class="fas fa-phone-alt"></i>
-            &nbsp; 0812-8400-7005
+            <br> 0812-8400-7005
           </a>
         </div>
-        <div class="col-auto">
-          <a class="btn btn-learn text-white">
+        <div class="col-md-6 col-12 my-2">
+          <a class="btn btn-learn text-white" target="_blank" href="https://www.google.com/maps/dir//RPTRA+Karang+Anyar+RRXG%2B8WX+Jl.+Karang+Anyar+RT.13%2FRW.9,+Karang+Anyar,+Sawah+Besar,+Central+Jakarta+City,+Jakarta+10740/@-6.1516326,106.8273723,15z/data=!4m5!4m4!1m0!1m2!1m1!1s0x2e69f5e6659b152f:0x85572b55e82da086">
             <i class="fas fa-map-marked"></i>
-            &nbsp;Klik Map Disini
+            <br> Klik Map Disini
           </a>
         </div>
       </div>
@@ -79,11 +78,9 @@ class="h-100 w-100 bg-white"
   </div>
 </div>
 <div class="container">
-  <div class="row align-items-center text-center section-profile">
-    <div class="col-md-12 col-12">
-      <img src={{asset('image/Group-profile.png')}} alt="imageGroup">
-    </div>
-  </div>
+ 
+      <img src="{{asset('image/Group-profile.png')}}" class="img-fuild img" width="100%" style="object-fit:cover" alt="imageGroup">
+    
 </div>
 </section>
 @endsection

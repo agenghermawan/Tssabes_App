@@ -40,47 +40,47 @@ class RegisterController extends Controller
     public function store(RegisterRequest $request)
     {
 
-        $StoreRegister = Register::create([
-            'namaLengkap' => $request->namaLengkap,
-            'email' => $request->email,
-            'tempatLahir' => $request->tempatLahir,
-            'tanggalLahir' => $request->tanggalLahir,
-            'jenisKelamin' => $request->jenisKelamin,
-            'usia' => $request->usia,
-            'tinggiBadan' => $request->tinggiBadan,
-            'beratBadan' => $request->beratBadan,
-            'agama' => $request->agama,
-            'asalSekolah' => $request->asalSekolah,
-            'tingkatanSekolah' => $request->tingkatanSekolah,
-            'unitLatihan' => $request->unitLatihan,
-            'tingkatanSabuk' => $request->tingkatanSabuk,
-            'riwayatKesehatan' => $request->riwayatKesehatan,
-            'alamat' => $request->alamat,
-            'noTelp' => $request->noTelp,
-            'foto' => $request->file('foto')->storeAs('image/foto',$request->file('foto')->getClientOriginalName(),'public'),
-            'akte' => $request->file('akte')->storeAs('image/akte',$request->file('akte')->getClientOriginalName(),'public'),
-            'status' => $request->status,
-          ]);
+        // $StoreRegister = Register::create([
+        //     'namaLengkap' => $request->namaLengkap,
+        //     'email' => $request->email,
+        //     'tempatLahir' => $request->tempatLahir,
+        //     'tanggalLahir' => $request->tanggalLahir,
+        //     'jenisKelamin' => $request->jenisKelamin,
+        //     'usia' => $request->usia,
+        //     'tinggiBadan' => $request->tinggiBadan,
+        //     'beratBadan' => $request->beratBadan,
+        //     'agama' => $request->agama,
+        //     'asalSekolah' => $request->asalSekolah,
+        //     'tingkatanSekolah' => $request->tingkatanSekolah,
+        //     'unitLatihan' => $request->unitLatihan,
+        //     'tingkatanSabuk' => $request->tingkatanSabuk,
+        //     'riwayatKesehatan' => $request->riwayatKesehatan,
+        //     'alamat' => $request->alamat,
+        //     'noTelp' => $request->noTelp,
+        //     'foto' => $request->file('foto')->storeAs('image/foto',$request->file('foto')->getClientOriginalName(),'public'),
+        //     'akte' => $request->file('akte')->storeAs('image/akte',$request->file('akte')->getClientOriginalName(),'public'),
+        //     'status' => $request->status,
+        //   ]);
 
-        ParentUser::create([
-            'id_pendaftar' => $StoreRegister->id,
-            'email_wali' => $request->email_wali,
-            'namaLengkap_wali' => $request->namaLengkap_wali,
-            'tempatLahir_wali' => $request->tempatLahir_wali,
-            'tanggalLahir_wali' => $request->tanggalLahir_wali,
-            'jenisKelamin_wali' => $request->jenisKelamin_wali,
-            'usia_wali' => $request->usia_wali,
-            'agama_wali' => $request->agama_wali,
-            'pekerjaan_wali' => $request->pekerjaan_wali,
-            'alamat_wali' => $request->alamat_wali,
-            'noTelp_wali' => $request->noTelp_wali,
-            'foto_wali' => $request->file('foto_wali')->storeAs('image/foto_wali',$request->file('foto_wali')->getClientOriginalName(),'public'),
-        ]);
+        // ParentUser::create([
+        //     'id_pendaftar' => $StoreRegister->id,
+        //     'email_wali' => $request->email_wali,
+        //     'namaLengkap_wali' => $request->namaLengkap_wali,
+        //     'tempatLahir_wali' => $request->tempatLahir_wali,
+        //     'tanggalLahir_wali' => $request->tanggalLahir_wali,
+        //     'jenisKelamin_wali' => $request->jenisKelamin_wali,
+        //     'usia_wali' => $request->usia_wali,
+        //     'agama_wali' => $request->agama_wali,
+        //     'pekerjaan_wali' => $request->pekerjaan_wali,
+        //     'alamat_wali' => $request->alamat_wali,
+        //     'noTelp_wali' => $request->noTelp_wali,
+        //     'foto_wali' => $request->file('foto_wali')->storeAs('image/foto_wali',$request->file('foto_wali')->getClientOriginalName(),'public'),
+        // ]);
 
-        toast('Berhasil Melakuakan Pendaftaran, Silahkan Menunggu di hubungi oleh tim kami','success');
-        return redirect()->route('Register-user')->with([
-            'message' => 'Berhasil di daftarkan'
-        ]);
+        // toast('Berhasil Melakuakan Pendaftaran, Silahkan Menunggu di hubungi oleh tim kami','success');
+        // return redirect()->route('Register-user')->with([
+        //     'message' => 'Berhasil di daftarkan'
+        // ]);
     }
 
     /**
@@ -126,5 +126,51 @@ class RegisterController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function register(RegisterRequest $request)
+    {
+
+        $StoreRegister = Register::create([
+            'namaLengkap' => $request->namaLengkap,
+            'email' => $request->email,
+            'tempatLahir' => $request->tempatLahir,
+            'tanggalLahir' => $request->tanggalLahir,
+            'jenisKelamin' => $request->jenisKelamin,
+            'usia' => $request->usia,
+            'tinggiBadan' => $request->tinggiBadan,
+            'beratBadan' => $request->beratBadan,
+            'agama' => $request->agama,
+            'asalSekolah' => $request->asalSekolah,
+            'tingkatanSekolah' => $request->tingkatanSekolah,
+            'unitLatihan' => $request->unitLatihan,
+            'tingkatanSabuk' => $request->tingkatanSabuk,
+            'riwayatKesehatan' => $request->riwayatKesehatan,
+            'alamat' => $request->alamat,
+            'noTelp' => $request->noTelp,
+            'foto' => $request->file('foto')->storeAs('image/foto',$request->file('foto')->getClientOriginalName(),'public'),
+            'akte' => $request->file('akte')->storeAs('image/akte',$request->file('akte')->getClientOriginalName(),'public'),
+            'status' => $request->status,
+          ]);
+
+        ParentUser::create([
+            'id_pendaftar' => $StoreRegister->id,
+            'email_wali' => $request->email_wali,
+            'namaLengkap_wali' => $request->namaLengkap_wali,
+            'tempatLahir_wali' => $request->tempatLahir_wali,
+            'tanggalLahir_wali' => $request->tanggalLahir_wali,
+            'jenisKelamin_wali' => $request->jenisKelamin_wali,
+            'usia_wali' => $request->usia_wali,
+            'agama_wali' => $request->agama_wali,
+            'pekerjaan_wali' => $request->pekerjaan_wali,
+            'alamat_wali' => $request->alamat_wali,
+            'noTelp_wali' => $request->noTelp_wali,
+            'foto_wali' => $request->file('foto_wali')->storeAs('image/foto_wali',$request->file('foto_wali')->getClientOriginalName(),'public'),
+        ]);
+
+        toast('Berhasil Melakuakan Pendaftaran, Silahkan Menunggu di hubungi oleh tim kami','success');
+        return redirect()->route('Register-user')->with([
+            'message' => 'Berhasil di daftarkan'
+        ]);
     }
 }

@@ -6,13 +6,13 @@
       <div class="image-rules d-flex justify-content-center">
         <img
           src="/image/rules.jpg"
-          alt=""
-          class="rounded "
-          width="700px"
-          height="700px"
+          alt="rules-pusbendiklat"
+          class="rounded w-full img-fluid"
+          width="50%"
+          height="50%"
         >
       </div>
-      <div class="text-rules">
+      <div class="text-rules my-2">
         <h4
           class="text-center"
           style="  color: #3ad8ff;
