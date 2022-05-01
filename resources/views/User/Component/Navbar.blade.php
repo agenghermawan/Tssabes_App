@@ -49,6 +49,14 @@ style="box-sizing:border-box"
             Daftar Sekarang
           </a>
       </div>
+      {{-- <div class="d-flex">
+        <a
+          class="btn btn-get-started btn-get-started-blue text-white"
+          href="{{route('Register-user')}}"
+        >
+          Daftar Ulang
+        </a>
+    </div> --}}
     </div>
   </div>
 </nav>

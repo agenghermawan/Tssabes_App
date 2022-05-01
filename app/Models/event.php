@@ -11,4 +11,8 @@ class event extends Model
     protected $fillable = [
         'name','organizer','image','description'
     ];
+
+    public function getImageAttribute($value){
+        return url('storage/'.$value);
+    }
 }

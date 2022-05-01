@@ -40,8 +40,8 @@ class RegisterRequest extends FormRequest
             'riwayatKesehatan' => 'required',
             'alamat' => 'required',
             'noTelp' => 'required|unique:registers',
-            'akte' => 'required|image:jpg,png|max:1024',
-            'foto' => 'required|image:jpg,png|max:1024',
+            'akte' => 'required|mimes:jpg,png,jpeg,webp|max:2048|image',
+            'foto' => 'required|mimes:jpg,png,jpeg,webp|max:2048|image',
 
             'email_wali' => 'required|unique:parent_users',
             'namaLengkap_wali' => 'required',
@@ -53,7 +53,7 @@ class RegisterRequest extends FormRequest
             'pekerjaan_wali' => 'required',
             'alamat_wali' => 'required',
             'noTelp_wali' => 'required',
-            'foto_wali' => 'required|max:1024|image:jpg,png,jpeg',
+            'foto_wali' => 'required|max:2048|mimes:jpg,png,jpeg|image',
         ];
     }
     public function messages()
@@ -82,12 +82,19 @@ class RegisterRequest extends FormRequest
             'tingkatanSabuk.required' => 'Tingkatan Sabuk harus diisi',
             'riwayatKesehatan.required' => 'Riwayat Kesehatan harus diisi',
             'alamat.required' => 'Alamat harus diisi',
+
             'noTelp.required' => 'No Telp harus diisi',
             'noTelp.unique' => 'No Telp Sudah terdaftar',
+
             'akte.required' => 'Akte harus diisi',
             'akte.image' => 'Akte harus berisi Image ',
+            'akte.max' => 'Ukuran file Akte harus kurang dari 2mb',
+            'akte.mimes' => 'File akte harus jpeg png jpg webp',
+
             'foto.required' => 'Foto harus diisi',
             'foto.image' => 'Foto harus image',
+            'foto.max' => 'Ukuran file foto harus kurang dari 2mb',
+            'foto.mimes' => 'File foto harus bertipe jpeg png web jpg',
 
             'email_wali.required' => 'Email Wali Harus diisi',
             'namaLengkap_wali.required' => 'Nama Lengkap Wali Harus diisi',
@@ -101,7 +108,11 @@ class RegisterRequest extends FormRequest
             'pekerjaan_wali.required' => 'Pekerjaan Wali Harus diisi',
             'alamat_wali.required' => 'Alamat Wali Harus diisi',
             'noTelp_wali.required' => 'No Telp Wali Harus diisi',
+
             'foto_wali.required' => 'Foto Wali Harus diisi',
+            'foto_wali.image' => 'Foto Wali Harus berisi file image',
+            'foto_wali.mimes' => 'File Foto Wali Harus bertipe jpeg web png jpg',
+            'foto_wali.max' => 'Ukurang Foto Wali Harus kurang dari 2mb',
 
             'email_wali.unique' => 'Email Wali Sudah Terdaftar',
         ];

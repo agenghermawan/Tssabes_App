@@ -19,7 +19,7 @@
             <div class="col-12 col-md-6">
                 <form action="{{ route('register.store.user')}}" method="post" enctype="multipart/form-data">
                     @csrf
-                    <input type="hidden" name="status" value="PendaftaranUlang">
+                    <input type="hidden" name="status" value="Pendaftaran Baru">
                     <div class="first-form" id="first-form">
                         <h3> Pendaftaran ( Data diri Peserta ) </h3>
                         <p> Sebelum melakukan pendaftaran baca terlebih dahulu aturan atau tata tertibnya nya <a
@@ -366,7 +366,7 @@
                                 </div>
                             </div>
                         </div>
-                     
+
                         <div class="col-md-12 my-3">
                             <label for="foto" class="mb-2"> Foto Orang Tua / Wali
                             </label>
@@ -379,15 +379,15 @@
                         <div class="col-md-12 my-3"><label for="foto" class="mb-2" style="text-align:justify">Menyetujui apa saja yang tertera dalam Peraturan Pusat Pembinaan Pendidikan Latihan (PUSBINDIKLAT) GEMILANG serta mempercayakan penuh terhadap kebijakan pengurus dan pelatih dalam melaksanakan program ini.</label><input type="checkbox" id="aggrement" name="aggrement" value="Agre" required=""><label for="aggrement"> &nbsp; Setuju</label><br></div>
                         <div class="row">
                             <div class="container">
-                                
-                                <a type="submit" class="btn btn-info my-2" 
+
+                                <a type="submit" class="btn btn-info my-2"
                                 style="
                                 border-radius: 20px;
                                 padding: 12px 30px;
                                 font-weight: 500;
                                 color:white"
                                 id="back"> Kembali </a>
-                                <button type="button" class="btn btn-info"   
+                                <button type="button" class="btn btn-info"
                                 style="
                                 border-radius: 20px;
                                 padding: 12px 30px;

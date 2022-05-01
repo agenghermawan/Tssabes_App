@@ -30,7 +30,7 @@
                             <td>
                                 {{ $item->organizer }}
                             </td>
-                            <td>
+                            <td class="d-flex d-inline">
                                 <!-- Button trigger for large size modal -->
                                       <button type="button" class="btn btn-outline-warning  btn-primary" data-bs-toggle="modal"
                                       data-bs-target="#large{{$item->id}}">
@@ -72,7 +72,13 @@
                                       </div>
                                   </div>
                                <a class="btn btn-info"> Ubah  </a>
-                               <a class="btn btn-danger"> Delete  </a>
+                               <form action="{{ route('event.delete',$item->id)}}" method="post">
+                                @csrf
+                                @method('delete')
+                                   <button class="btn btn-danger">
+                                       Delete
+                                       </button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach

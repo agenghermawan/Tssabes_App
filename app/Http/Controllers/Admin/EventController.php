@@ -14,7 +14,7 @@ class EventController extends Controller
     public function index(){
         $getEvent = event::all();
         return view('Admin.Event.index',compact('getEvent'));
-    }   
+    }
 
     public function create(){
         return view('Admin.Event.create');
@@ -29,6 +29,12 @@ class EventController extends Controller
     }
 
     public function delete(Request $request){
-
+        if($request->id == null){
+            toast('data yang anda hapus tidak di temukan','error');
+            return back();
+        }
+        event::where('id',$request->id)->delete();
+        toast('berhasil menghapus event','success');
+        return back();
     }
 }

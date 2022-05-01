@@ -76,6 +76,7 @@ Route::middleware('auth')->group(function (){
     Route::get('event/create',[EventController::class, 'create'])->name('event.create');
 
     Route::post('event/store',[EventController::class, 'store'])->name('event.store');
+    Route::delete('event/destroy/{id}',[EventController::class, 'delete'])->name('event.delete');
 });
 
 require __DIR__.'/auth.php';

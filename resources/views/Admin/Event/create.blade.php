@@ -51,13 +51,7 @@
                                                 </div>
                                                 <div class="col-md-10 form-group">
                                                     <input type="file" id="image" class="form-control" name="image"
-                                                        placeholder="Mobile">
-                                                        @error('image')
-                                                        <div class="text text-danger">
-                                                            {{ $message}}
-                                                        </div>
-                                                    @enderror
-                                                        
+                                                        >
                                                 </div>
                                                 <div class="col-md-2 my-2">
                                                     <label> Image Preview</label>
