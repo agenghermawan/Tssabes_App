@@ -154,7 +154,7 @@ class RegisterController extends Controller
           ]);
 
         ParentUser::create([
-            'id_pendaftar' => $StoreRegister->id,
+            'register_id' => $StoreRegister->id,
             'email_wali' => $request->email_wali,
             'namaLengkap_wali' => $request->namaLengkap_wali,
             'tempatLahir_wali' => $request->tempatLahir_wali,

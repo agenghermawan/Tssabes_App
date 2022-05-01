@@ -62,6 +62,8 @@ class RegisterRequest extends FormRequest
             'namaLengkap.required' => 'Nama Lengkap harus diisi',
             'email.required' => 'Email harus diisi',
             'email.unique' => 'Email sudah terdaftar',
+            'email.email' => 'Email harus diisi dengan benar',
+
             'tempatLahir.required' => 'Tempat Lahir harus diisi',
             'tanggalLahir.required' => 'Tanggal Lahir harus diisi',
             'jenisKelamin.required' => 'Jenis Kelamin harus diisi',

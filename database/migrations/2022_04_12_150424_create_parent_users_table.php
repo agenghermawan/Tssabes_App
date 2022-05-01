@@ -15,7 +15,7 @@ class CreateParentUsersTable extends Migration
     {
         Schema::create('parent_users', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_pendaftar');
+            $table->integer('register_id')->constrained('registers');
             $table->string('email_wali');
             $table->string('namaLengkap_wali');
             $table->string('tempatLahir_wali');

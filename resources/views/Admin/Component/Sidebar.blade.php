@@ -96,6 +96,18 @@
                     </ul>
                 </li>
 
+                <li class="sidebar-item  has-sub">
+                    <a href="#" class='sidebar-link'>
+                        <i class="bi bi-person-fill"></i>
+                        <span>Fitur </span>
+                    </a>
+                    <ul class="submenu ">
+                        <li class="submenu-item ">
+                            <a href="{{ route('fitur.index') }}">Edit Fitur </a>
+                        </li>
+                    </ul>
+                </li>
+
                 <li class="sidebar-item">
                     <form action="{{ route('logout') }}" method="post">
                         @csrf

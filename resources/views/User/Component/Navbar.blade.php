@@ -49,14 +49,20 @@ style="box-sizing:border-box"
             Daftar Sekarang
           </a>
       </div>
-      {{-- <div class="d-flex">
+      @php
+        $daftarUlang = App\Models\Fitur::first();
+      @endphp
+      @if ($daftarUlang -> fitur == 'on')
+      <div class="d-flex">
         <a
           class="btn btn-get-started btn-get-started-blue text-white"
-          href="{{route('Register-user')}}"
+          href="{{route('daftar.ulang')}}"
         >
           Daftar Ulang
         </a>
-    </div> --}}
+    </div>
+      @endif
+
     </div>
   </div>
 </nav>

@@ -7,7 +7,9 @@ use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\PesertaController;
 use App\Http\Controllers\Admin\PrestasiController;
 use App\Http\Controllers\Admin\RegisterController;
+use App\Http\Controllers\Admin\FiturController;
 use App\Http\Controllers\User\FrontendController;
+use App\Http\Controllers\User\DaftarUlangController;
 use App\Http\Controllers\User\HomeController as UserHomeController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
@@ -48,6 +50,8 @@ Route::get('/daftar',[FrontendController::class,'register'])->name('Register-use
 Route::post('/register/store/user', [RegisterController::class, 'register'])->name('register.store.user');
 // Route::resource('/register', RegisterController::class);
 
+Route::get('/daftar-ulang', [DaftarUlangController::class,'index'])->name('daftar.ulang');
+Route::post('/daftar-ulang/store', [DaftarUlangController::class,'store'])->name('daftarulang.store');
 
 // Route::get('/', function () {
 //     return ['Laravel' => app()->version()];
@@ -65,6 +69,7 @@ Route::middleware('auth')->group(function (){
     Route::get('/admin/prestasi-remaja',[PrestasiController::class, 'prestasiRemaja'])->name('prestasi-remaja');
     Route::resource('/admin/prestasi', PrestasiController::class);
     Route::resource('/admin/gallery', GalleryController::class);
+    Route::resource('/admin/fitur', FiturController::class);
 
     Route::get('/peserta', [PesertaController::class, 'index'])->name('peserta.index');
     Route::get('/statistic/{IdPeserta}', [PesertaController::class, 'statistic'])->name('statistic');
