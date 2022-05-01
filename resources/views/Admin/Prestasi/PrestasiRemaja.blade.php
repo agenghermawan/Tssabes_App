@@ -9,7 +9,7 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-            <table class="table table-striped" id="table1">
+            <table class="table table-striped table-datatable" id="table1">
                 <thead>
                     <tr>
                         <th>Nama Lengkap</th>

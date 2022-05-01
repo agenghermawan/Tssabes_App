@@ -13,6 +13,6 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="{{ asset('assets/vendors/simple-datatables/simple-datatables.js') }}"></script>
 <script>
     // Simple Datatable
-    let table1 = document.querySelector('#table1');
-    let dataTable = new simpleDgatatables.DataTable(table1);
-</script>
+    let table1 = document.querySelector(".table-datatable");
+    let dataTable = new simpleDatatables.DataTable(table1);
+  </script>
