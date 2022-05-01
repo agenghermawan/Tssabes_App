@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\PesertaController;
@@ -70,6 +71,11 @@ Route::middleware('auth')->group(function (){
 
     Route::get('/peserta/statistik', [PesertaController::class, 'create'])->name('peserta.create');
     Route::post('/peserta/statistik',[PesertaController::class,'store'])->name('statistik.store');
+
+    Route::get('event',[EventController::class, 'index'])->name('event.index');
+    Route::get('event/create',[EventController::class, 'create'])->name('event.create');
+
+    Route::post('event/store',[EventController::class, 'store'])->name('event.store');
 });
 
 require __DIR__.'/auth.php';

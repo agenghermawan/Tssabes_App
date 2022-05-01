@@ -48,6 +48,7 @@
     @include('Admin.Component.Script')
     @yield('opsionalJS')
     @stack('chart')
+    @stack('js')
 </body>
 
 </html>
