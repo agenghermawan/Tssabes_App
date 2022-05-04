@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Api\GalleryController;
 use App\Http\Controllers\Api\PrestasiController;
 use App\Http\Controllers\Api\RegisterController;
@@ -38,3 +39,5 @@ Route::post('login-api',[RegisterController::class,'login']);
 
 Route::get('/users',[RegisterController::class,'users']);
 Route::get('/users/{id}',[RegisterController::class ,'show']);
+
+Route::get('/event',[EventController::class, 'apiEvent']);

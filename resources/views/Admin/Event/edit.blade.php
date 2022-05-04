@@ -70,8 +70,8 @@
                                                     <label for="dateEvent"> Date Event</label>
                                                 </div>
                                                 <div class="col-md-10 my-2 form-group">
-                                                    <input type="date" name="dateEvent" id="dateEvent" value="dd-mm-yyyy"
-                                                        placeholder="dd-mm-yyy" class="form-control">
+                                                    <input type="date" name="dateEvent" id="dateEvent"
+                                                        value="{{ old('dateEvent') }}" class="form-control">
                                                     @error('dateEvent')
                                                         <div class="text text-danger">
                                                             {{ $message }}

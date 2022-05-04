@@ -19,6 +19,7 @@ class CreateEventsTable extends Migration
             $table->string('organizer');
             $table->longText('description');
             $table->string('image');
+            $table->date('dateEvent');
             $table->timestamps();
         });
     }

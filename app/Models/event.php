@@ -9,8 +9,9 @@ class event extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name','organizer','image','description'
+        'name','organizer','image','description','dateEvent'
     ];
+    protected $dates = ['dateEvent'];
 
     public function getImageAttribute($value){
         return url('storage/'.$value);

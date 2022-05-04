@@ -26,8 +26,9 @@ class EventRequest extends FormRequest
         return [
             'name' => ['required'],
             'organizer' => ['required'],
-            'image' => ['required','image','max:2048'.'mimes:png,jpg,jpeg,webp'],
+            'image' => ['required','max:2048','mimes:png,jpg,jpeg,webp'],
             'description' => ['required','max:1000'],
+            'dateEvent' => ['required']
         ];
     }
 
@@ -36,12 +37,15 @@ class EventRequest extends FormRequest
         return[
             'name.required' => "Nama Event wajib diisi",
             'organizer.required' => "Organizer  wajib diisi",
-            'image.name' => "Image wajib diisi",
-            'image.max' => "Image File terlalu besar harus kurang dari 1mb",
+
             'image.required' => "Image wajib diisi",
+            'image.max' => "Image File terlalu besar harus kurang dari 4mb",
             'image.mimes' => "Image wajib diisi jpg png jpeg",
+
             'description.required' => "Description wajib diisi",
-            'description.1000' => "Description maksimal 1000 Karakter",
+            'description.max' => "Description maksimal 1000 Karakter",
+
+            'dateEvent.required' => "Tanggal Wajib diisi",
         ];
     }
 }

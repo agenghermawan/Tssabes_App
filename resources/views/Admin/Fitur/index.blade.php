@@ -18,7 +18,8 @@
                             </div>
                             <div class="card-content">
                                 <div class="card-body">
-                                    <form class="form form-horizontal" method="post" action="{{route('fitur.store')}}" enctype="multipart/form-data">
+                                    <form class="form form-horizontal" method="post" action="{{ route('fitur.store') }}"
+                                        enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-body">
                                             <div class="row">
@@ -27,17 +28,20 @@
                                                 </div>
                                                 <div class="col-md-10 form-group">
                                                     <div class="form-check form-switch">
-                                                        <input class="form-check-input" name="fitur" type="checkbox" id="flexSwitchCheckChecked" @if($data->fitur == 'on')
-                                                            checked
-                                                            @else
-                                                            nonchecked
+                                                        <input class="form-check-input" name="fitur" type="checkbox"
+                                                            id="flexSwitchCheckChecked"
+                                                            @if (!empty($data)) @if ($data->fitur == 'on')
+                                                                checked
+                                                                @else
+                                                                nonchecked @endif
                                                             @endif
-                                                            >
-                                                        <label class="form-check-label" for="flexSwitchCheckChecked">Active Or Not</label>
-                                                      </div>
+                                                        >
+                                                        <label class="form-check-label" for="flexSwitchCheckChecked">Active
+                                                            Or Not</label>
+                                                    </div>
                                                     @error('name')
                                                         <div class="text text-danger">
-                                                            {{ $message}}
+                                                            {{ $message }}
                                                         </div>
                                                     @enderror
                                                 </div>
